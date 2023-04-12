@@ -2,6 +2,7 @@ import path from 'path'
 import express from 'express'
 import userRoutes from './user.routes.js'
 import bodyParser from 'body-parser'
+import mongoose from 'mongoose'
 var app = express();
 import config from './config.js'
 const PORT = config.port;
@@ -19,7 +20,6 @@ app.listen(PORT, function() {
 });
 
 const MONGODB_URL = "mongodb://127.0.0.1:27017";
-const mongoose = require('mongoose');
 mongoose.Promise = global.Promise
 mongoose.connect(MONGODB_URL, { dbName: "users" })
 mongoose.connection.on('error', err=> {
