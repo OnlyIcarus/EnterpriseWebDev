@@ -18,6 +18,7 @@ body {
   margin-left: 15%;
 }
 
+#input-pass,
 #input-user {
   padding: 5px;
   margin-bottom: 15px;
@@ -29,9 +30,4 @@ body {
   background: var(--bgFormEls);
   transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
     transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
-}
-
-#input-pass {
-  padding: 5px;
-  margin-bottom: 15px;
 }
