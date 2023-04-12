@@ -50,3 +50,8 @@ body {
 #input-user:focus {
   transform: scale(1.02);
 }
+
+#login-button:enabled:hover,
+#login-button:hover {
+  background: var(--bgFormElsFocus);
+}
