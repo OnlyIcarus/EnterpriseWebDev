@@ -22,12 +22,11 @@ export default function App() {
       ]
     }
 
-    fetch('http://127.0.0.1:8000/api/users', {
-      method: 'POST',
-      mode: 'cors',
-      body: JSON.stringify(login)
-    })
-  }
+    fetch('http://127.0.0.1:8000/api/users' + new URLSearchParams({
+      name: 'isaac',
+      password: '1234567',
+      email: 'mymail@mail.com'
+    }))
 
   return (
     <div id="login-container">
