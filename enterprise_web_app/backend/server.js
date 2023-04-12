@@ -16,9 +16,13 @@ await mongoose.connect('mongodb://127.0.0.1/my_database');
 // parse body params and attache them to req.body
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(res.set('Access-Control-Allow-Origin', '*'))
 
 app.use('/', userRoutes)
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+});
+
 
 // 404 page
 app.use(function ( req, res, next) {
