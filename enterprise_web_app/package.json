@@ -52,6 +52,7 @@
     ]
   },
   "browser": {
-    "crypto": false
-  }
+    "crypto": false,
+    "stream": false
+}
 }
