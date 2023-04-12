@@ -23,7 +23,7 @@ export default function App() {
     setTodos(newTodos)
   }
 
-  function handleAddTdo(e) {
+  function handleAddTodo(e) {
     const name = todoNameRef.current.value
     if (name === '') return
     setTodos(prevTodos => {
