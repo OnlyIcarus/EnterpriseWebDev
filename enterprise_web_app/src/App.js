@@ -7,7 +7,8 @@ const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
 export default function App() {
   const [todos, setTodos] = useState([])
-  const todoNameRef = useRef()
+  const usernameRef = useRef()
+  const passwordRef = useRef()
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
@@ -40,9 +41,12 @@ export default function App() {
   }
 
   return (
-    <div id="container">
+    <div id="login-container">
       <TodoList todos = {todos} toggleTodo = {toggleTodo}/>
-      <input ref={todoNameRef} type="text" />
+      <div id="login-input">
+        <input ref={usernameRef} type="text" />
+        <input ref={passwordRef} type="text" />
+      </div>
       <button onClick={handleAddTodo}>Add Todo</button>
       <button onClick={handleClearTodos}>Clear Complete</button>
       <div>{todos.filter(todo => !todo.complete).length} left to do</div>

@@ -1,9 +1,9 @@
 body {
-  background-image: url("./background.jpg");
+  background-image: url("./background.jpg"); /*  by pikisuperstar on Freepik */
   background-size: 100%;
 }
 
-#container {
+#login-container {
   margin-top: 30%;
   margin-left: 15%;
 }
