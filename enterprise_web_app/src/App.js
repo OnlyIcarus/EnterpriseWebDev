@@ -46,9 +46,8 @@ export default function App() {
         <input ref={usernameRef} type="text" />
         <input ref={passwordRef} type="text" />
       </div>
-      <button onClick={handleAddTodo}>Add Todo</button>
-      <button onClick={handleClearTodos}>Clear Complete</button>
-      <div>{todos.filter(todo => !todo.complete).length} left to do</div>
+      <button>Add Todo</button>
+      <button>Clear Complete</button>
     </div>
   )
 }
