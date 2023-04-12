@@ -23,6 +23,7 @@ export default function App() {
 
     fetch("http://127.0.0.1/api/users",
     {
+      headers: {'Content-Type': 'application/json'},
       method: "POST",
       body: data
     })
