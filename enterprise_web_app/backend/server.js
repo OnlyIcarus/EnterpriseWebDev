@@ -3,7 +3,7 @@ import express from 'express'
 import userRoutes from './user.routes.js'
 import bodyParser from 'body-parser'
 var app = express();
-import config from './config'
+import config from './config.js'
 const PORT = config.port;
 const MONGOURL = config.mongoUri;
 
