@@ -3,8 +3,24 @@ import {v4 as uuidv4} from 'uuid';
 import './App.css'
 
 //const LOCAL_STORAGE_KEY = 'todoApp.todos'
+const { MongoClient } = require("mongodb");
+const url = "mongodb://127.0.0.1:27017";
 
 export default function App() {
+
+  const client = new MongoClient(url);
+  async function run() {
+    try {
+      await client.connect();
+      await client.db("admin").command({ping: 1});
+      console.log("Connected succesfully to server");
+      console.log("Start the database stuff");
+      console.log("End the database stuff");
+    } finally {
+      await client.close();
+    }
+  }
+  run().catch(console.dir);
 
   var path = require('path');
   var express = require('express');
