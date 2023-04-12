@@ -26,5 +26,6 @@ app.use(function ( req, res, next) {
 
 app.listen(PORT, function () {
     console.log('Listening on http://localhost:'+PORT+'/');
+    res.set('Access-Control-Allow-Origin', '*');
 });
 
