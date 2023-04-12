@@ -12,12 +12,20 @@ export default function App() {
     let username = usernameRef.current.value
     let password = passwordRef.current.value
 
+    var login = {
+      "users": [
+          {
+              "name": "isaac", 
+              "password": 1234567,
+              "email": "mymail@mail.com"
+          },
+      ]
+    }
+
     fetch('http://127.0.0.1:8000/api/users', {
       method: 'POST',
       mode: 'cors',
-      name: 'isaac',
-      password: '1234567',
-      email: 'mymail@email.com'
+      body: JSON.stringify(login)
     })
   }
 
