@@ -13,7 +13,7 @@
     "uuid": "9.0.0",
     "mongodb": "5.2.0",
     "buffer": "6.0.3",
-    "crypto-js": "4.1.1",
+    "crypto-browserify": "3.12.0",
     "os": "0.1.2",
     "util": "0.12.5",
     "fs": "0.0.1-security",
