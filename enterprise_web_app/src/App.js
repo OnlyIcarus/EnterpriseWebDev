@@ -7,6 +7,18 @@ export default function App() {
   const usernameRef = useRef()
   const passwordRef = useRef()
 
+  function handleLogin() {
+    alert('Attempting Login');
+    let username = usernameRef.current.value
+    let password = passwordRef.current.value
+
+    fetch('http://127.0.0.1:8000/api/users', {
+      method: 'POST',
+      mode: 'cors',
+      body: 'isaac' + '1234567' + 'email@email.com'
+    })
+  }
+
   return (
     <div id="login-container">
       <div id="login-input">
@@ -14,7 +26,7 @@ export default function App() {
         <br/>
         <input ref={passwordRef} type="text" placeholder="Password..." id="input-pass" />
       </div>
-      <button id="login-button">Submit</button>
+      <button id="login-button" onClick={handleLogin}>Submit</button>
     </div>
   )
 }
