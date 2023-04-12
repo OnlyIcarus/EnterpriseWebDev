@@ -6,6 +6,10 @@ import './App.css'
 
 export default function App() {
 
+  const [todos, setTodos] = useState([])
+  const usernameRef = useRef()
+  const passwordRef = useRef()
+
   // useEffect(() => {
   //   const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
   //   if (storedTodos) setTodos(storedTodos)
