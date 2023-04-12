@@ -27,6 +27,7 @@ export default function App() {
       password: '1234567',
       email: 'mymail@mail.com'
     }))
+  }
 
   return (
     <div id="login-container">
