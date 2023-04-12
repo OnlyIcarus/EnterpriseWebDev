@@ -1,3 +1,12 @@
+:root {
+  --white: #afafaf;
+  --red: #e31b23;
+  --bodyColor: #292a2b;
+  --borderFormEls: hsl(0, 0%, 10%);
+  --bgFormEls: hsl(0, 0%, 14%);
+  --bgFormElsFocus: hsl(0, 7%, 20%);
+}
+
 body {
   background-image: url("./background.jpg"); /*  by pikisuperstar on Freepik */
   background-size: 100%;
