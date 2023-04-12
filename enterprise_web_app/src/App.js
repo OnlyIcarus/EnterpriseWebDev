@@ -15,7 +15,9 @@ export default function App() {
     fetch('http://127.0.0.1:8000/api/users', {
       method: 'POST',
       mode: 'cors',
-      body: 'isaac' + '1234567' + 'email@email.com'
+      name: 'isaac',
+      password: '1234567',
+      email: 'mymail@email.com'
     })
   }
 
