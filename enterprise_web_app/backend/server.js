@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/', userRoutes)
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8000");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
