@@ -19,18 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/', userRoutes)
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Access-Control-Allow-Credentials",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
-
 // 404 page
 app.use(function ( req, res, next) {
     res.send('This page does not exist!')

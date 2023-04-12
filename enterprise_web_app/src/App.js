@@ -23,7 +23,8 @@ export default function App() {
 
     fetch("http://127.0.0.1:8000/api/users",
     {
-      headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'http://127.0.0.1:8000'},
+      headers: {'Content-Type': 'application/json'},
+      type: 'cors',
       method: "POST",
       body: data
     })
