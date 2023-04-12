@@ -22,11 +22,19 @@ export default function App() {
       ]
     }
 
-    fetch('http://127.0.0.1:8000/api/users' + new URLSearchParams({
-      name: 'isaac',
-      password: '1234567',
-      email: 'mymail@mail.com'
-    }))
+    (async () => {
+      const rawResponse = await fetch('https://127.0.0.1/api/users', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name: 'isaac', password: '1234567', email: 'mymail@mail.com'})
+      });
+      const content = await rawResponse.json();
+    
+      console.log(content);
+    })();
   }
 
   return (
