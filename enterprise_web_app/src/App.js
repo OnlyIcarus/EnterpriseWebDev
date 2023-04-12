@@ -1,66 +1,49 @@
-import React from 'react';
-import './App.css';
+import React, { useState, useRef, useEffect } from 'react'
+import uuidv4 from 'uuid/v4'
 
-class MyToDoList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { items: [], text: ''};
-    this.valChange = this.valChange.bind(this);
-    this.valSubmit = this.valSubmit.bind(this);
+const LOCAL_STORAGE_KEY = 'todoApp.todos'
+
+export default function App() {
+  const [todos, setTodos] = useState([])
+  const todoNameRef = useRef()
+
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storeTodos) setTodos(storedTodos)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
+  }, [todos])
+
+  function toggleTodo(id) {
+    const newTodos = [...todos]
+    const todo = newTodos.find(todo => todo.id === id)
+    todo.complete = !todo.complete
+    setTodos(newTodos)
   }
 
-  render() {
-    return (
-      <div className = 'App-header'>
-        <h1>My Fancy To Do List</h1>
-        <TodoList items={this.state.items} />
-        <form onSubmit={this.valSubmit}>
-          <label htmlFor='new-todo'>
-            What should we do next...?
-          </label>
-          <input 
-            id='new-todo'
-            onChange={this.valChange}
-            value={this.state.text}
-          />
-          <button>
-            Add #{this.state.items.length +1}
-          </button>
-        </form>
-      </div>
-    );
+  function handleAddTdo(e) {
+    const name = todoNameRef.current.value
+    if (name === '') return
+    setTodos(prevTodos => {
+      return [...prevTodos, { id: uuidv4(), name: name, complete: false}]
+    })
+    todoNameRef.current.value = null
   }
 
-  valChange(e) {
-    this.setState({text: e.target.value})
+  function handleClearTodos() {
+    const newTodos = todos.filter(todo => !todo.complete)
+    setTodos(newTodos)
   }
 
-  valSubmit(e) {
-    e.preventDefault();
-    if(!this.state.text.length){
-      return;
-    }
-    const newItem = {
-      text: this.state.text,
-      id: Date.now()
-    };
-    this.setState(state => ({
-      items: state.items.concat(newItem),
-      text:''
-    }));
-  }
+  return (
+    <>
+      <TodoList todos = {todos} toggleTodo = {toggleTodo}/>
+      <input red={todoNameRef} type="text" />
+      <button onClick={handleAddTodo}>Add Todo</button>
+      <button onClick={handleClearTodos}>Clear Complete</button>
+      <div>{todos.filter(todo => !todo.complete).length} left to do</div>
+    </>
+  )
 }
-
-class TodoList extends React.Component {
-  render() {
-    return (
-      <ul>
-        {this.props.items.map((item, index) => (
-          <li key={index}>{item.text}</li>
-        ))}
-      </ul>
-    );
-  }
-}
-
-export default MyToDoList;
