@@ -42,11 +42,10 @@ export default function App() {
   return (
     <div id="login-container">
       <div id="login-input">
-        <input ref={usernameRef} type="text" />
-        <input ref={passwordRef} type="text" />
+        <input ref={usernameRef} type="text" placeholder="Username..." />
+        <input ref={passwordRef} type="text" placeholder="Password..." />
       </div>
-      <button>Add Todo</button>
-      <button>Clear Complete</button>
+      <button>Submit</button>
     </div>
   )
 }
