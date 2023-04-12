@@ -4,6 +4,7 @@
   --bodyColor: #292a2b;
   --borderFormEls: hsl(0, 0%, 10%);
   --bgFormEls: hsl(0, 0%, 31%);
+  --bgFormBut: hsl(0, 0%, 13%);
   --bgFormElsFocus: hsl(0, 7%, 20%);
 }
 
@@ -35,4 +36,5 @@ body {
 
 #login-button {
   width: 60%;
+  background: var(--bgFormEls);
 }
