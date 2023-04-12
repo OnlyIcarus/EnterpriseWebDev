@@ -37,4 +37,5 @@ body {
 #login-button {
   width: 60%;
   background: var(--white);
+  color: var(--bgFormBut);
 }
