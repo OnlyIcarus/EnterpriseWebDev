@@ -24,7 +24,8 @@
     "net": "1.0.2",
     "http": "0.0.1-security",
     "tls": "0.0.1",
-    "zlib": "1.0.5"
+    "zlib": "1.0.5",
+    "crypto-es": "1.2.7"
   },
   "scripts": {
     "start": "react-scripts start",
