@@ -39,3 +39,14 @@ body {
   background: var(--white);
   color: var(--bgFormBut);
 }
+
+#login-button:focus,
+#input-pass:focus,
+#input-user:focus {
+  background: var(--bgFormElsFocus);
+}
+
+#input-pass:focus,
+#input-user:focus {
+  transform: scale(1.02);
+}
