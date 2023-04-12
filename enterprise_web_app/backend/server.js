@@ -16,6 +16,7 @@ await mongoose.connect('mongodb://127.0.0.1/my_database');
 // parse body params and attache them to req.body
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(res.set('Access-Control-Allow-Origin', '*'))
 
 app.use('/', userRoutes)
 
@@ -26,6 +27,5 @@ app.use(function ( req, res, next) {
 
 app.listen(PORT, function () {
     console.log('Listening on http://localhost:'+PORT+'/');
-    res.set('Access-Control-Allow-Origin', '*');
 });
 
