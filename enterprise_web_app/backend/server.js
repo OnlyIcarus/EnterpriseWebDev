@@ -19,6 +19,8 @@ app.listen(PORT, function() {
   console.log("Listening on http://localhost"+PORT+"/")
 });
 
+app.use('/', userRoutes)
+
 const MONGODB_URL = "mongodb://127.0.0.1:27017";
 mongoose.Promise = global.Promise
 mongoose.connect(MONGODB_URL, { dbName: "users" })
