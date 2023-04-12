@@ -5,6 +5,20 @@ import './App.css'
 //const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
 export default function App() {
+
+  var path = require('path');
+  var express = require('express');
+  var app = express();
+  const PORT = 8080
+
+  app.use(function ( req, res, next) {
+    res.send('This page does not exist!')
+  });
+
+  app.listen(PORT, function () {
+    console.log('Listening on http://localhost:'+PORT+'/');
+  });
+
   const [todos, setTodos] = useState([])
   const usernameRef = useRef()
   const passwordRef = useRef()
