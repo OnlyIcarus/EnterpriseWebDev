@@ -13,28 +13,19 @@ export default function App() {
     let password = passwordRef.current.value
 
     var login = {
-      "users": [
-          {
-              "name": "isaac", 
-              "password": 1234567,
-              "email": "mymail@mail.com"
-          },
-      ]
+      name: 'isaac',
+      password: '1234567',
+      email: 'mymail@mail.com'
     }
 
-    (async () => {
-      const rawResponse = await fetch('https://127.0.0.1/api/users', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name: 'isaac', password: '1234567', email: 'mymail@mail.com'})
-      });
-      const content = await rawResponse.json();
-    
-      console.log(content);
-    })();
+    var data = new FormData();
+    data.append("json", JSON.stringify( login ) );
+
+    fetch("http://127.0.0.1/api/users",
+    {
+      method: "POST",
+      body: data
+    })
   }
 
   return (
