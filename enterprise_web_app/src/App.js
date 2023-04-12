@@ -46,7 +46,7 @@ export default function App() {
         <br/>
         <input ref={passwordRef} type="text" placeholder="Password..." id="input-pass" />
       </div>
-      <button>Submit</button>
+      <button id="login-button">Submit</button>
     </div>
   )
 }
