@@ -21,7 +21,7 @@ export default function App() {
     var data = new FormData();
     data.append("json", JSON.stringify( login ) );
 
-    fetch("http://127.0.0.1/api/users",
+    fetch("http://127.0.0.1:8000/api/users",
     {
       headers: {'Content-Type': 'application/json'},
       method: "POST",
