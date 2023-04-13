@@ -110,7 +110,9 @@ export default function App() {
         </div>
       </div>
       <div id="main-body">
-        <div id="signout-button" onClick={handleSignout}>Sign Out</div>
+        <div id="center">
+          <div id="signout-button" onClick={handleSignout}>Sign Out</div>
+        </div>
       </div>
     </div>
   )
