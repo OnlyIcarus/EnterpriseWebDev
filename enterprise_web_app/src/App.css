@@ -13,7 +13,7 @@ body {
   background-size: 100%;
 }
 
-#login-button-container {
+#register-button-container {
   width: 20%;
   float: right;
   margin-top: 5%;
@@ -31,8 +31,8 @@ body {
   margin-left: 15%;
 }
 
-#login-button,
-#login-button,
+#register-button,
+#register-button,
 .inputLogin {
   padding: 5px;
   margin-bottom: 15px;
@@ -46,8 +46,8 @@ body {
     transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
 }
 
-#login-button,
-#login-button {
+#register-button,
+#register-button {
   width: 60%;
   background: var(--white);
   color: var(--bgFormBut);
@@ -61,10 +61,10 @@ body {
   transform: scale(1.02);
 }
 
-#login-button:enabled:hover,
-#login-button:hover,
-#login-button:enabled:hover,
-#login-button:hover {
+#register-button:enabled:hover,
+#register-button:hover,
+#register-button:enabled:hover,
+#register-button:hover {
   background: var(--bgFormElsFocus);
   cursor: pointer;
 }

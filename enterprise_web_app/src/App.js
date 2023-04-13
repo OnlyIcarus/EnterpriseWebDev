@@ -42,7 +42,7 @@ export default function App() {
   return (
     <div id="login-page">
       <div id="login-button-container">
-        <div id="the-button" onClick={switchPageLogin}>Already a User? Login Here</div>
+        <div id="register-button" onClick={switchPageLogin}>Already a User? Login Here</div>
       </div>
       <div id="register-container">
         <div id="register-input">
