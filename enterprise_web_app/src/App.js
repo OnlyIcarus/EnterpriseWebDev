@@ -11,6 +11,7 @@ export default function App() {
   function handleLogin() {
     alert('Attempting Login');
     let username = usernameRef.current.value
+    console.log(username)
     let password = passwordRef.current.value
     let email = emailRef.current.value
 
