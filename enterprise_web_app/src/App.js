@@ -62,7 +62,7 @@ export default function App() {
       }
     })
 
-    if (login) {
+    if (login === true) {
       document.getElementById('register-container').style.display = 'none';
       document.getElementById('login-container').style.display = 'block';
     }
