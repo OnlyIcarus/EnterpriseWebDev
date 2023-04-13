@@ -30,12 +30,12 @@ export default function App() {
     var x = document.getElementById("register-container");
     var y = document.getElementById("login-container");
     
-    if (x.style.display === "block" && y.style.display === "none") {
-      x.style.display = "none";
-      y.style.display = "block";
-    } else if (x.style.display === "none" && y.style.display === "block") {
-      y.style.display = "none";
+    if (x.style.display === "none") {
       x.style.display = "block";
+      y.style.display = "none";
+    } else if (y.style.display === "none") {
+      y.style.display = "block";
+      x.style.display = "none";
     }
   }
 
