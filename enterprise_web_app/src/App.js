@@ -64,6 +64,15 @@ export default function App() {
     })
   }
 
+  function handleSignout() {
+    if (confirm('Are you sure you want to sign out?') == true) {
+      console.log('Signed Out')
+    } else {
+      return;
+    }
+    return;
+  }
+
   return (
     <div id="container">
       <div id="login-page">
@@ -88,6 +97,9 @@ export default function App() {
           </div>
           <button id="register-button" onClick={handleLogin}>Log In</button>
         </div>
+      </div>
+      <div id="main-body">
+        <div id="signout-button" onClick={handleSignout}>Sign Out</div>
       </div>
     </div>
   )
