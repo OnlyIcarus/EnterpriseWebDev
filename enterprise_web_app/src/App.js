@@ -27,7 +27,7 @@ export default function App() {
   }
 
   function switchPageLogin() {
-    
+    console.log(1)
   }
 
   return (
