@@ -54,8 +54,10 @@ export default function App() {
       body: JSON.stringify( { email: email, password: password} )
     }).then(function (response) {
       alert("success");
+      return response;
     }).catch(function (error) {
       alert("fail");
+      throw error;
     })
   }
 
