@@ -22,7 +22,7 @@ export default function App() {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
       method: "POST",
-      body: JSON.stringify( { name: '${username}', password: '${password}', email: '${email}' } )
+      body: JSON.stringify( { name: username, password: password, email: email} )
     })
   }
 
