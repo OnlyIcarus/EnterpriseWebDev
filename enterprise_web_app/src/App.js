@@ -26,7 +26,7 @@ export default function App() {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
       method: "POST",
-      body: data
+      body: login
     })
   }
 
