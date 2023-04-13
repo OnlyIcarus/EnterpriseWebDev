@@ -26,7 +26,7 @@ export default function App() {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
       method: "POST",
-      body: login
+      body: JSON.stringify( { name: 'isaac', password: '1234567', email: 'mymail@mail.com' } )
     })
   }
 
