@@ -44,8 +44,20 @@ export default function App() {
   }
 
   function handleLogin() {
-    console.log(loginEmailRef.current.value);
-    console.log(loginPassRef.current.value);
+    const email = loginEmailRef.current.value;
+    const password = loginPassRef.current.value;
+
+    fetch("auth/signin",
+    {
+      headers: {'Content-Type': 'application/json'},
+      type: 'cors',
+      method: "POST",
+      body: JSON.stringify( { email: email, password: password} )
+    }).then(function (response) {
+      console.log("success");
+    }).catch(function (error) {
+      console.log("fail");
+    })
   }
 
   return (
