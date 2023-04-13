@@ -13,7 +13,7 @@ export default function App() {
     let password = passwordRef.current.value
     let email = emailRef.current.value
 
-    const response = fetch("api/users",
+    fetch("api/users",
     {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
