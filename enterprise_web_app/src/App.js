@@ -26,6 +26,10 @@ export default function App() {
     })
   }
 
+  function switchPageLogin() {
+    
+  }
+
   return (
     <div id="login-page">
       <div id="login-container">
