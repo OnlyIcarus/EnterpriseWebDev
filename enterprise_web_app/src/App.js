@@ -21,11 +21,11 @@ export default function App() {
       body: JSON.stringify( { name: username, password: password, email: email} )
     })
 
-    if (response.status === 200) {
-      alert("Succesfully registered");
-    } else {
-      alert("Something went wrong, please try again");
-    }
+    // if (response.status === 200) {
+    //   alert("Succesfully registered");
+    // } else {
+    //   alert("Something went wrong, please try again");
+    // }
   }
 
   function switchPageLogin() {
