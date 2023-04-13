@@ -56,9 +56,9 @@ export default function App() {
       </div>
       <div id="login-container">
         <div id="login-input">
-          <input ref={emailRef} type="text" placeholder="Username..." id="input-login" />
+          <input type="text" placeholder="Email..." id="input-login" />
           <br />
-          <input ref={passwordRef} type="password" placeholder="Password..." className="input-login" />
+          <input type="password" placeholder="Password..." className="input-login" />
         </div>
       </div>
     </div>
