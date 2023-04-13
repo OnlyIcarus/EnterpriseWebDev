@@ -63,9 +63,9 @@ export default function App() {
       </div>
       <div id="login-container">
         <div id="login-input">
-          <input ref={emailRef} type="text" placeholder="Email..." className="inputLogin" />
+          <input type="text" placeholder="Email..." className="inputLogin" />
           <br />
-          <input ref={passwordRef} type="password" placeholder="Password..." className="inputLogin" />
+          <input type="password" placeholder="Password..." className="inputLogin" />
         </div>
         <button id="register-button" onClick={handleLogin}>Log In</button>
       </div>
