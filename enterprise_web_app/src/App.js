@@ -8,7 +8,7 @@ export default function App() {
   const passwordRef = useRef()
   const emailRef = useRef()
 
-  function handleLogin() {
+  function handleRegister() {
     alert('Attempting Login');
     let username = usernameRef.current.value
     console.log(username)
@@ -40,6 +40,10 @@ export default function App() {
     }
   }
 
+  function handleLogin() {
+    console.log(1);
+  }
+
   return (
     <div id="login-page">
       <div id="login-button-container">
@@ -53,7 +57,7 @@ export default function App() {
           <br />
           <input ref={emailRef} type="text" placeholder="E-Mail..." className="inputLogin" />
         </div>
-        <button id="register-button" onClick={handleLogin}>Register</button>
+        <button id="register-button" onClick={handleRegister}>Register</button>
       </div>
       <div id="login-container">
         <div id="login-input">
@@ -61,6 +65,7 @@ export default function App() {
           <br />
           <input ref={passwordRef} type="password" placeholder="Password..." className="inputLogin" />
         </div>
+        <button id="register-button" onClick={handleLogin}>Log In</button>
       </div>
     </div>
   )
