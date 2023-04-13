@@ -13,7 +13,7 @@ body {
   background-size: 100%;
 }
 
-#login-container {
+#login-button-container {
   width: 20%;
   float: right;
   margin-top: 5%;
@@ -21,7 +21,7 @@ body {
   text-align: center;
 }
 
-.register-container {
+#register-container {
   width: 20%;
   margin-top: 20%;
   margin-left: 15%;

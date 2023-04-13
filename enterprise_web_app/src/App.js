@@ -27,40 +27,40 @@ export default function App() {
   }
 
   function switchPageLogin() {
-    var x = document.getElementsByClassName("register-container");
-    if (x[0].style.display === "none") {
-      x[1].style.display = "none";
-      x[0].style.display = "block";
-    } else if (x[1].style.display === "none") {
-      x[0].style.display = "none";
-      x[1].style.display = "block";
+    var x = document.getElementById("register-container");
+    var y = document.getElementById("login-container");
+    
+    if (x.style.display === "block" && y.style.display === "none") {
+      x.style.display = "none";
+      y.style.display = "block";
+    } else if (x.style.display === "none" && y.style.display === "block") {
+      y.style.display = "none";
+      x.style.display = "block";
     }
   }
 
   return (
     <div id="login-page">
-      <div id="login-container">
+      <div id="login-button-container">
         <div id="register-button" onClick={switchPageLogin}>Already a User? Login Here</div>
       </div>
-      <div className="register-container">
-        <div id="login-input">
+      <div id="register-container">
+        <div id="register-input">
           <input ref={usernameRef} type="text" placeholder="Username..." className="inputLogin" />
           <br />
           <input ref={passwordRef} type="password" placeholder="Password..." className="inputLogin" />
           <br />
           <input ref={emailRef} type="text" placeholder="E-Mail..." className="inputLogin" />
         </div>
-        <button id="login-button" onClick={handleLogin}>Register</button>
+        <button id="register-button" onClick={handleLogin}>Register</button>
       </div>
-      <div className="register-container" display="none">
+      <div id="login-container" display="none">
         <div id="login-input">
-          <input ref={usernameRef} type="text" placeholder="Test" className="inputLogin" />
+          <input ref={emailRef} type="text" placeholder="Username..." className="inputLogin" />
           <br />
           <input ref={passwordRef} type="password" placeholder="Password..." className="inputLogin" />
-          <br />
-          <input ref={emailRef} type="text" placeholder="E-Mail..." className="inputLogin" />
         </div>
-        <button id="login-button" onClick={handleLogin}>Register</button>
+        <button id="login-button" onClick={handleLogin}>Log In</button>
       </div>
     </div>
   )
