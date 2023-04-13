@@ -20,8 +20,7 @@ body {
 }
 
 #login-button,
-#input-pass,
-#input-user {
+.inputLogin {
   padding: 5px;
   margin-bottom: 15px;
   width: 100%;
@@ -40,13 +39,11 @@ body {
   color: var(--bgFormBut);
 }
 
-#input-pass:focus,
-#input-user:focus {
+.inputLogin:focus {
   background: var(--bgFormElsFocus);
 }
 
-#input-pass:focus,
-#input-user:focus {
+.inputLogin:focus {
   transform: scale(1.02);
 }
 

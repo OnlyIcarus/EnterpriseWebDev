@@ -6,20 +6,13 @@ export default function App() {
   const [todos, setTodos] = useState([])
   const usernameRef = useRef()
   const passwordRef = useRef()
+  const emailRef = useRef()
 
   function handleLogin() {
     alert('Attempting Login');
     let username = usernameRef.current.value
     let password = passwordRef.current.value
-
-    var login = {
-      name: 'isaac',
-      password: '1234567',
-      email: 'mymail@mail.com'
-    }
-
-    var data = new FormData();
-    data.append("json", JSON.stringify( login ) );
+    let email = emailRef.current.value
 
     fetch("api/users",
     {
@@ -33,9 +26,11 @@ export default function App() {
   return (
     <div id="login-container">
       <div id="login-input">
-        <input ref={usernameRef} type="text" placeholder="Username..." id="input-user" />
+        <input ref={usernameRef} type="text" placeholder="Username..." class="inputLogin" />
         <br/>
-        <input ref={passwordRef} type="text" placeholder="Password..." id="input-pass" />
+        <input ref={passwordRef} type="text" placeholder="Password..." class="inputLogin" />
+        <br/>
+        <input ref={emailRef} type="text" placeholder="E-Mail..." class="inputLogin" />
       </div>
       <button id="login-button" onClick={handleLogin}>Submit</button>
     </div>
