@@ -13,19 +13,18 @@ export default function App() {
     let password = passwordRef.current.value
     let email = emailRef.current.value
 
-    const response = fetch("api/users",
+    fetch("api/users",
     {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
       method: "POST",
       body: JSON.stringify( { name: username, password: password, email: email} )
+    }).then(function (response) {
+      alert("Succesfully Registered User");
+    }).catch(function (error) {
+      alert("Something went wrong, please try again");
     })
 
-    if (response.status === 200) {
-      alert("Succesfully registered");
-    } else {
-      alert("Something went wrong, please try again");
-    }
   }
 
   function switchPageLogin() {
