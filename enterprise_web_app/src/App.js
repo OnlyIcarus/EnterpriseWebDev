@@ -46,7 +46,6 @@ export default function App() {
   function handleLogin() {
     const email = loginEmailRef.current.value;
     const password = loginPassRef.current.value;
-    let login = false;
 
     fetch("auth/signin",
     {
@@ -58,14 +57,10 @@ export default function App() {
         alert ("Wrong email and password combination");
       } else {
         alert("You have logged in succesfully");
-        login = true;
+        document.getElementById('register-container').style.display = 'none';
+        document.getElementById('login-container').style.display = 'none';
       }
     })
-
-    if (login === true) {
-      document.getElementById('register-container').style.display = 'none';
-      document.getElementById('login-container').style.display = 'none';
-    }
   }
 
   return (
