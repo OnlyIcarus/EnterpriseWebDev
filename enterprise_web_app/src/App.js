@@ -28,10 +28,12 @@ export default function App() {
 
   function switchPageLogin() {
     var x = document.getElementsByClassName("register-container");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
+    if (x[0].style.display === "none") {
+      x[1].style.display = "none";
+      x[0].style.display = "block";
+    } else if (x[1].style.display === "none") {
+      x[0].style.display = "none";
+      x[1].style.display = "block";
     }
   }
 
