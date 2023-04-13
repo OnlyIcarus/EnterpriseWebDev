@@ -65,7 +65,7 @@ export default function App() {
   }
 
   function handleSignout() {
-    if (confirm('Are you sure you want to sign out?') == true) {
+    if (window.confirm('Are you sure you want to sign out?') == true) {
       console.log('Signed Out')
     } else {
       return;
