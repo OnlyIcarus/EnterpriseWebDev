@@ -59,6 +59,7 @@ export default function App() {
         alert("You have logged in succesfully");
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'none';
+        document.getElementById('register-button').style.display = 'none';
       }
     })
   }
