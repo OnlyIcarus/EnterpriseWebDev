@@ -60,7 +60,6 @@ export default function App() {
           <br />
           <input ref={passwordRef} type="password" placeholder="Password..." className="inputLogin" />
         </div>
-        <button id="login-button" onClick={handleLogin}>Log In</button>
       </div>
     </div>
   )
