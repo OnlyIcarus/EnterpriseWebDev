@@ -27,11 +27,11 @@ export default function App() {
   return (
     <div id="login-container">
       <div id="login-input">
-        <input ref={usernameRef} type="text" placeholder="Username..." class="inputLogin" />
+        <input ref={usernameRef} type="text" placeholder="Username..." className="inputLogin" />
         <br/>
-        <input ref={passwordRef} type="text" placeholder="Password..." class="inputLogin" />
+        <input ref={passwordRef} type="text" placeholder="Password..." className="inputLogin" />
         <br/>
-        <input ref={emailRef} type="text" placeholder="E-Mail..." class="inputLogin" />
+        <input ref={emailRef} type="text" placeholder="E-Mail..." className="inputLogin" />
       </div>
       <button id="login-button" onClick={handleLogin}>Submit</button>
     </div>
