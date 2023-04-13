@@ -54,9 +54,9 @@ export default function App() {
       method: "POST",
       body: JSON.stringify( { email: email, password: password} )
     }).then(function (response) {
-      console.log("success");
+      alert("success");
     }).catch(function (error) {
-      console.log("fail");
+      alert("fail");
     })
   }
 
