@@ -27,7 +27,7 @@ export default function App() {
   }
 
   function switchPageLogin() {
-    var x = document.getElementById("register-container");
+    var x = document.getElementByClass("register-container");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
@@ -40,7 +40,7 @@ export default function App() {
       <div id="login-container">
         <div id="register-button" onClick={switchPageLogin}>Already a User? Login Here</div>
       </div>
-      <div id="register-container">
+      <div className="register-container">
         <div id="login-input">
           <input ref={usernameRef} type="text" placeholder="Username..." className="inputLogin" />
           <br />
