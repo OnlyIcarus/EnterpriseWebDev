@@ -54,4 +54,5 @@ body {
 #login-button:enabled:hover,
 #login-button:hover {
   background: var(--bgFormElsFocus);
+  cursor: pointer;
 }
