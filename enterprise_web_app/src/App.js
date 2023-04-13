@@ -64,7 +64,7 @@ export default function App() {
 
     if (login === true) {
       document.getElementById('register-container').style.display = 'none';
-      document.getElementById('login-container').style.display = 'block';
+      document.getElementById('login-container').style.display = 'none';
     }
   }
 
