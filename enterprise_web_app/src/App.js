@@ -54,7 +54,7 @@ export default function App() {
       </div>
       <div className="register-container" display="none">
         <div id="login-input">
-          <input ref={usernameRef} type="text" placeholder="Username..." className="inputLogin" />
+          <input ref={usernameRef} type="text" placeholder="Test" className="inputLogin" />
           <br />
           <input ref={passwordRef} type="password" placeholder="Password..." className="inputLogin" />
           <br />
