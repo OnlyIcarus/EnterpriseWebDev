@@ -23,6 +23,7 @@ export default function App() {
 
     fetch("api/users",
     {
+      headers: {'Content-Type': 'application/json'},
       type: 'cors',
       method: "POST",
       body: data
