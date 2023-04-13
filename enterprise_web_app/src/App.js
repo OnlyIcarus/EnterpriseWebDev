@@ -27,16 +27,17 @@ export default function App() {
   }
 
   function switchPageLogin() {
-    var x = document.getElementById("register-container");
-    var y = document.getElementById("login-container");
-    
-    if (x.style.display === "none") {
-      x.style.display = "block";
-      y.style.display = "none";
-    } else if (y.style.display === "none") {
-      y.style.display = "block";
-      x.style.display = "none";
-    }
+    if (document.getElementById('register-container')) {
+
+      if (document.getElementById('register-container').style.display == 'none') {
+          document.getElementById('register-container').style.display = 'block';
+          document.getElementById('login-container').style.display = 'none';
+      }
+      else {
+          document.getElementById('register-container').style.display = 'none';
+          document.getElementById('login-container').style.display = 'block';
+      }
+  }
   }
 
   return (
