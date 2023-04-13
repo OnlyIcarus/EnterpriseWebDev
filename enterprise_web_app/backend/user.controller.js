@@ -3,7 +3,7 @@ import lodash from 'lodash'
 import errorHandler from './dbErrorHandler.js'
 
 const create = async (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8000/api/users");
     const user = new User(req.body)
     try {
       await user.save()
