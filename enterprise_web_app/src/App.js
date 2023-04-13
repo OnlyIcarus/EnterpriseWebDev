@@ -7,6 +7,8 @@ export default function App() {
   const usernameRef = useRef()
   const passwordRef = useRef()
   const emailRef = useRef()
+  const loginEmailRef = useRef()
+  const loginPassRef = useRef()
 
   function handleRegister() {
     let username = usernameRef.current.value
@@ -42,7 +44,8 @@ export default function App() {
   }
 
   function handleLogin() {
-    console.log(1);
+    console.log(loginEmailRef);
+    console.log(loginPassRef);
   }
 
   return (
@@ -62,9 +65,9 @@ export default function App() {
       </div>
       <div id="login-container">
         <div id="login-input">
-          <input type="text" placeholder="Email..." className="inputLogin" />
+          <input ref={loginEmailRef} type="text" placeholder="Email..." className="inputLogin" />
           <br />
-          <input type="password" placeholder="Password..." className="inputLogin" />
+          <input ref={loginPassRef} type="password" placeholder="Password..." className="inputLogin" />
         </div>
         <button id="register-button" onClick={handleLogin}>Log In</button>
       </div>
