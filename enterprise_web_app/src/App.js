@@ -54,7 +54,7 @@ export default function App() {
         </div>
         <button id="register-button" onClick={handleLogin}>Register</button>
       </div>
-      <div id="login-container" display="none">
+      <div id="login-container">
         <div id="login-input">
           <input ref={emailRef} type="text" placeholder="Username..." className="inputLogin" />
           <br />

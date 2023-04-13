@@ -21,13 +21,17 @@ body {
   text-align: center;
 }
 
+#login-container {
+  display: none;
+}
+
 #register-container {
   width: 20%;
   margin-top: 20%;
   margin-left: 15%;
 }
 
-#register-button,
+#login-button,
 #login-button,
 .inputLogin {
   padding: 5px;
@@ -42,7 +46,7 @@ body {
     transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
 }
 
-#register-button,
+#login-button,
 #login-button {
   width: 60%;
   background: var(--white);
@@ -57,8 +61,8 @@ body {
   transform: scale(1.02);
 }
 
-#register-button:enabled:hover,
-#register-button:hover,
+#login-button:enabled:hover,
+#login-button:hover,
 #login-button:enabled:hover,
 #login-button:hover {
   background: var(--bgFormElsFocus);
