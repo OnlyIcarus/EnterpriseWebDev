@@ -55,9 +55,6 @@ export default function App() {
     }).then(function (response) {
       alert("success");
       return response;
-    }).catch(function (error) {
-      alert("fail");
-      throw error;
     })
   }
 
