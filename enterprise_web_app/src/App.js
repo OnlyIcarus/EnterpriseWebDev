@@ -37,7 +37,7 @@ export default function App() {
           document.getElementById('register-container').style.display = 'none';
           document.getElementById('login-container').style.display = 'block';
       }
-  }
+    }
   }
 
   return (
@@ -56,10 +56,10 @@ export default function App() {
         <button id="register-button" onClick={handleLogin}>Register</button>
       </div>
       <div id="login-container">
-        <div id="other-input">
-          <input type="text" placeholder="Email..." id="input-login" />
+        <div id="login-input">
+          <input ref={emailRef} type="text" placeholder="Email..." className="input-login" />
           <br />
-          <input type="password" placeholder="Password..." className="input-login" />
+          <input ref={passwordRef} type="password" placeholder="Password..." className="input-login" />
         </div>
       </div>
     </div>

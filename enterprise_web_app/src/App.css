@@ -25,6 +25,7 @@ body {
   display: none;
 }
 
+#login-container,
 #register-container {
   width: 20%;
   margin-top: 20%;
