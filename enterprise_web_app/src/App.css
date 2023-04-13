@@ -72,4 +72,7 @@ body {
 
 #signout-button {
   display: none;
+  width: 20%;
+  align-self: center;
+  text-align: center;
 }
