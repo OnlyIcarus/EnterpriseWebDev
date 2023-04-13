@@ -50,7 +50,6 @@ export default function App() {
     fetch("auth/signin",
     {
       headers: {'Content-Type': 'application/json'},
-      type: 'cors',
       method: "POST",
       body: JSON.stringify( { email: email, password: password} )
     }).then(function (response) {
