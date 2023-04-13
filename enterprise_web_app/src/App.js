@@ -46,7 +46,7 @@ export default function App() {
   function handleLogin() {
     const email = loginEmailRef.current.value;
     const password = loginPassRef.current.value;
-    const login = false;
+    let login = false;
 
     fetch("auth/signin",
     {
