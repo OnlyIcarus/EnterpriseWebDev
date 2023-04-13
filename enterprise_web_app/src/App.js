@@ -13,7 +13,9 @@ export default function App() {
     let username = usernameRef.current.value
     console.log(username)
     let password = passwordRef.current.value
+    console.log(password)
     let email = emailRef.current.value
+    console.log(email)
 
     fetch("api/users",
     {
