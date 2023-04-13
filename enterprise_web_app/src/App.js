@@ -31,7 +31,7 @@ export default function App() {
       <div id="login-input">
         <input ref={usernameRef} type="text" placeholder="Username..." className="inputLogin" />
         <br/>
-        <input ref={passwordRef} type="text" placeholder="Password..." className="inputLogin" />
+        <input ref={passwordRef} type="password" placeholder="Password..." className="inputLogin" />
         <br/>
         <input ref={emailRef} type="text" placeholder="E-Mail..." className="inputLogin" />
       </div>
