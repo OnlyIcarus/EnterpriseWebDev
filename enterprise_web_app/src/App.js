@@ -60,6 +60,7 @@ export default function App() {
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
+        document.getElementById('signout-button').style.display = 'block';
       }
     })
   }
@@ -99,7 +100,7 @@ export default function App() {
         </div>
       </div>
       <div id="main-body">
-        <div id="signout-button" onClick={handleSignout}>Sign Out</div>
+        <div id="signout-button" onClick={handleSignout} display="none">Sign Out</div>
       </div>
     </div>
   )
