@@ -13,6 +13,13 @@ body {
   background-size: 100%;
 }
 
+#login-container {
+  width: 25%;
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
 #register-container {
   width: 20%;
   margin-top: 20%;
