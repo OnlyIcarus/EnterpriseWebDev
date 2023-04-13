@@ -69,3 +69,7 @@ body {
   background: var(--bgFormElsFocus);
   cursor: pointer;
 }
+
+#signout-button {
+  display: none;
+}
