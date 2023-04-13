@@ -4,6 +4,7 @@ import userRoutes from './user.routes.js'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose';
 import cors from 'cors';
+import authRoutes from './auth.routes.js'
 
 var app = express();
 
@@ -19,6 +20,15 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/', userRoutes)
+app.use('/', authRoutes)
+app.use((err, req, res, next) => {
+  if (err.name === "UnauthorizedError") {
+    res.status(401).json({"error": err.name + ": " + err.message})
+  } else if (err) {
+    res.status(400).json({"error": err.name + ": " + err.message})
+    console.log(err)
+  }
+})
 
 app.use(cors({
   origin: 'http://127.0.0.1:3000',

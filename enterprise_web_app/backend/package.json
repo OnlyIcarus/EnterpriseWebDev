@@ -17,6 +17,8 @@
     "mongoose": "^7.0.3",
     "crypto": "1.0.1",
     "lodash": "4.17.21",
-    "path": "0.12.7"
+    "path": "0.12.7",
+    "jsonwebtoken": "9.0.0",
+    "express-jwt": "8.4.1"
   }
 }
