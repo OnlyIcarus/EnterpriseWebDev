@@ -68,6 +68,16 @@ export default function App() {
   function handleSignout() {
     if (window.confirm('Are you sure you want to sign out?') == true) {
       console.log('Signed Out')
+      fetch("auth/signout",
+      {
+        headers: {'Content-Type': 'application/json'},
+        method: "GET"
+      }).then(function (response) {
+        alert('Succesfully signed out')
+        document.getElementById('register-container').style.display = 'block';
+        document.getElementById('register-button').style.display = 'block';
+        document.getElementById('signout-button').style.display = 'none';
+      })
     } else {
       return;
     }
