@@ -9,21 +9,23 @@ export default function App() {
   const emailRef = useRef()
 
   function handleRegister() {
-    alert('Attempting Login');
     let username = usernameRef.current.value
-    console.log(username)
     let password = passwordRef.current.value
-    console.log(password)
     let email = emailRef.current.value
-    console.log(email)
 
-    fetch("api/users",
+    const response = fetch("api/users",
     {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
       method: "POST",
       body: JSON.stringify( { name: username, password: password, email: email} )
     })
+
+    if (response.status === 200) {
+      alert("Succesfully registered");
+    } else {
+      alert("Something went wrong, please try again");
+    }
   }
 
   function switchPageLogin() {
