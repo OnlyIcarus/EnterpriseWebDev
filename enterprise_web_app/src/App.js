@@ -27,7 +27,7 @@ export default function App() {
   }
 
   function switchPageLogin() {
-    var x = document.getElementByClass("register-container");
+    var x = document.getElementByClassName("register-container");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
