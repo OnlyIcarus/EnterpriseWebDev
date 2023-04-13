@@ -19,6 +19,6 @@
     "lodash": "4.17.21",
     "path": "0.12.7",
     "jsonwebtoken": "9.0.0",
-    "express-jwt": "6.1.0"
+    "express-jwt": "8.4.1"
   }
 }
