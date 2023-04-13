@@ -44,8 +44,8 @@ export default function App() {
   }
 
   function handleLogin() {
-    console.log(loginEmailRef);
-    console.log(loginPassRef);
+    console.log(loginEmailRef.current.value);
+    console.log(loginPassRef.current.value);
   }
 
   return (
