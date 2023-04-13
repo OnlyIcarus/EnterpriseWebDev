@@ -63,8 +63,8 @@ export default function App() {
     })
 
     if (login) {
-      getElementById('register-container').style.display = "none";
-      getElementById('login-container').style.display = "none";
+      document.getElementById('register-container').style.display = "none";
+      document.getElementById('login-container').style.display = "none";
     }
   }
 
