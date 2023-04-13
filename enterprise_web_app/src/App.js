@@ -53,8 +53,11 @@ export default function App() {
       method: "POST",
       body: JSON.stringify( { email: email, password: password} )
     }).then(function (response) {
-      alert("success");
-      return response;
+      if (response.status === 401) {
+        alert ("failure");
+      } else {
+        alert("success");
+      }
     })
   }
 
