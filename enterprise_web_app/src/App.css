@@ -73,6 +73,6 @@ body {
 #signout-button {
   display: none;
   width: 20%;
-  align-self: center;
+  float: center;
   text-align: center;
 }
