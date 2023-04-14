@@ -1,6 +1,7 @@
 import path from 'path';
 import express from 'express';
 import userRoutes from './user.routes.js'
+import quoteRoutes from './quote.routes.js'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -20,6 +21,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/', userRoutes)
+app.use('/', quoteRoutes)
 app.use('/', authRoutes)
 
 app.use(cors({
