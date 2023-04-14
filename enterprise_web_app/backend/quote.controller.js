@@ -37,7 +37,7 @@ const quoteById = async (req, res, next, id) => {
       return res.status('400').json({
         error: "Quote not found"
       })
-    req.profile = user
+    req.profile = quote
     next()
   } catch (err) {
     return res.status(400).json({
@@ -50,7 +50,7 @@ const update = async (req, res) => {
   try {
     let quote = req.profile
     quote = lodash.extend(quote, req.body)
-    user.updated = Date.now()
+    quote.updated = Date.now()
     await quote.save()
     res.json(quote)
   } catch (err) {

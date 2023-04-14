@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 
-const UserSchema = new mongoose.Schema({
+const QuoteSchema = new mongoose.Schema({
   casual_workers: Number,
   casual_worker_pay: Number,
   average_casual_hours: Number,
@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
         
 })
 
-const quoteModel = mongoose.model('Quotes', UserSchema);
+const quoteModel = mongoose.model('Quotes', QuoteSchema);
 quoteModel.createIndexes();
 export default quoteModel
 
