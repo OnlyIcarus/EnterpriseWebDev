@@ -74,7 +74,7 @@ const remove = async (req, res) => {
 
 export default {
   create,
-  userByID,
+  quoteById,
   list,
   remove,
   update
