@@ -55,7 +55,7 @@ const UserSchema = new mongoose.Schema({
         
 })
 
-const userModel = mongoose.model('Quotes', UserSchema);
-userModel.createIndexes();
+const quoteModel = mongoose.model('Quotes', UserSchema);
+quoteModel.createIndexes();
 export default quoteModel
 
