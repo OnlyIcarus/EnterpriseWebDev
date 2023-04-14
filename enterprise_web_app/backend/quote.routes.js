@@ -9,8 +9,8 @@ router.route('/api/quote')
   .post(quoteCtrl.create)
 
 router.route('/api/quote/:quoteId')
-  .put(authCtrl.requireSignin, authCtrl.hasAuthorization, quoteCtrl.update)
-  .delete(authCtrl.requireSignin, authCtrl.hasAuthorization, quoteCtrl.remove)
+  .put(quoteCtrl.update)
+  .delete(quoteCtrl.remove)
 
 router.param('wuoteId', quoteCtrl.quoteById)
   
