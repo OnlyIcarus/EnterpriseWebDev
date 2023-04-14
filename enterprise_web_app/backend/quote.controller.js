@@ -72,9 +72,15 @@ const remove = async (req, res) => {
   }
 }
 
+const read = (req, res) => {
+  return res.json(req.profile)
+}
+
+
 export default {
   create,
   quoteById,
+  read,
   list,
   remove,
   update
