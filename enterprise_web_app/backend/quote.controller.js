@@ -77,11 +77,12 @@ const read = (req, res) => {
   return res.json(req.profile)
 }
 
-const listByEmail = async (req, res, email) => {
+const listByEmail = async (req, res, next, email) => {
   try {
-    let quotes = await Quote.find({email: 'bean@bean.com'}).select('email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
+    let quotes = await Quote.find({email: email}).select('email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
     console.log("Got quotes" + quotes)
-    res.json(quotes)
+    req.profile = quotes
+    next()
   } catch (err) {
     return res.status(400).json({
       error: errorHandler.getErrorMessage(err)

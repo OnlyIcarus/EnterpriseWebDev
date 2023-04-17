@@ -17,7 +17,7 @@ router.route('/api/calculate/:quoteId')
   .get(quoteCtrl.calculate)
 
 router.route('/api/list/:email')
-  .get(quoteCtrl.listByEmail)
+  .get(quoteCtrl.read)
 
 router.param('quoteId', quoteCtrl.quoteById)
 router.param('email', quoteCtrl.listByEmail)
