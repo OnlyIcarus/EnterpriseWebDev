@@ -9,6 +9,16 @@ export default function App() {
   const emailRef = useRef()
   const loginEmailRef = useRef()
   const loginPassRef = useRef()
+  const casualWorkersRef = useRef()
+  const casualWorkerPayRef = useRef()
+  const averageCasualHoursRef = useRef()
+  const standardWorkersRef = useRef()
+  const standardWorkerPayRef = useRef()
+  const averageStandardHoursRef = useRef()
+  const expertWorkersRef = useRef()
+  const expertWorkerPayRef = useRef()
+  const averageExpertHoursRef = useRef()
+  const physicalAssetsRef = useRef()
 
   function handleRegister() {
     let username = usernameRef.current.value
@@ -62,6 +72,7 @@ export default function App() {
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
+        document.getElementsByClassName('invis').style.display = 'block';
         document.getElementById('signout-button').style.display = 'block';
       }
     })
@@ -112,6 +123,15 @@ export default function App() {
         </div>
       </div>
       <div id="main-body">
+        <div id="casual_workers" className="invis" ref={casualWorkersRef} type="number" placeholder="Number of Casual Workers" />
+        <div id="casual_worker_pay" className="invis" ref={casualWorkerPayRef} type="number" placeholder="Average pay for casual workers" />
+        <div id="average_casual_pay" className="invis" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
+        <div id="standard_workers" className="invis" ref={standardWorkersRef} type="number" placeholder="Number of Standard Workers" />
+        <div id="standard_worker_pay" className="invis" ref={standardWorkerPayRef} type="number" placeholder="Average pay for standard workers" />
+        <div id="average_standard_pay" className="invis" ref={averageStandardHoursRef} type="number" placeholder="Average hours worked by standard workers" />
+        <div id="expert_workers" className="invis" ref={expertWorkersRef} type="number" placeholder="Number of Expert Workers" />
+        <div id="expert_worker_pay" className="invis" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
+        <div id="average_expert_pay" className="invis" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
         <div id="center">
           <div id="signout-button" onClick={handleSignout}>Sign Out</div>
         </div>
