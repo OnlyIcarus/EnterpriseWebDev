@@ -102,5 +102,6 @@ export default {
   read,
   list,
   remove,
-  update
+  update,
+  calculate
 }
