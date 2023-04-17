@@ -116,7 +116,8 @@ body {
   width: 300px;
 }
 
-#calculate {
+#calculate,
+#save-button {
   display: none;
   width: 15%;
   margin-left: 26%;
