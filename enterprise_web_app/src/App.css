@@ -35,6 +35,7 @@ body {
 #signout-button,
 #register-button,
 #calculate,
+#save-button,
 .inputLogin {
   padding: 5px;
   margin-bottom: 15px;
@@ -50,7 +51,8 @@ body {
 
 #signout-button,
 #register-button,
-#calculate {
+#calculate,
+#save-button {
   width: 60%;
   background: var(--white);
   color: var(--bgFormBut);
@@ -69,7 +71,9 @@ body {
 #register-button:enabled:hover,
 #register-button:hover,
 #calculate:enabled:hover,
-#calculate:hover {
+#calculate:hover
+#save-button:enabled:hover
+#save-button:hover {
   background: var(--bgFormElsFocus);
   cursor: pointer;
 }
