@@ -110,6 +110,7 @@ body {
 
 #calculate {
   display: none;
+  float: right;
 }
 
 #inputs {
