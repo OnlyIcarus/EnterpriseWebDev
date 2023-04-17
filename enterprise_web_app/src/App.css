@@ -93,3 +93,9 @@ body {
   margin-left: 5%;
   margin-bottom: 5%;
 }
+
+#casual-workers,
+#casual-worker-pay,
+#average-casual-hours {
+  margin-top: 15%;
+}
