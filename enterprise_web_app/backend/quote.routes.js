@@ -14,7 +14,7 @@ router.route('/api/quote/:quoteId')
   .delete(quoteCtrl.remove)
 
 router.route('api/calculate/:quoteId')
-.get(quoteCtrl.calculate)
+  .get(quoteCtrl.calculate)
 
 router.param('quoteId', quoteCtrl.quoteById)
   
