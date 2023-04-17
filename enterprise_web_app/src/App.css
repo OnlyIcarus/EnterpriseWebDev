@@ -101,3 +101,9 @@ body {
 #average-casual-hours {
   margin-top: 10%;
 }
+
+#average-casual-hours,
+#average-standard-hours,
+#average-expert-hours {
+  width: 300px;
+}
