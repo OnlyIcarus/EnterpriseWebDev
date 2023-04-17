@@ -89,5 +89,5 @@ body {
 #expert-workers,
 #expert-worker-pay,
 #average-expert-hours {
-  display: none;
+  display: block;
 }

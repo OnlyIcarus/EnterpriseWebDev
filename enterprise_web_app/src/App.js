@@ -3,7 +3,6 @@ import {v4 as uuidv4} from 'uuid';
 import './App.css'
 
 export default function App() {
-  const [todos, setTodos] = useState([])
   const usernameRef = useRef()
   const passwordRef = useRef()
   const emailRef = useRef()
@@ -42,7 +41,7 @@ export default function App() {
   function switchPageLogin() {
     if (document.getElementById('register-container')) {
 
-      if (document.getElementById('register-container').style.display == 'none') {
+      if (document.getElementById('register-container').style.display === 'none') {
           document.getElementById('register-container').style.display = 'block';
           document.getElementById('login-container').style.display = 'none';
           document.getElementById('register-button').textContent = 'Already a User? Login Here';
@@ -87,7 +86,7 @@ export default function App() {
   }
 
   function handleSignout() {
-    if (window.confirm('Are you sure you want to sign out?') == true) {
+    if (window.confirm('Are you sure you want to sign out?') === true) {
       console.log('Signed Out')
       fetch("auth/signout",
       {
