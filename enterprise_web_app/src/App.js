@@ -81,7 +81,7 @@ export default function App() {
         document.getElementById('expert-worker-pay').style.display = 'inline-block';
         document.getElementById('average-expert-hours').style.display = 'inline-block';
         document.getElementById('calculate').style.display = 'inline-block';
-        document.getElementById('signout-button').style.display = 'block';
+        document.getElementById('signout-button').style.display = 'inline-block';
       }
     })
   }
