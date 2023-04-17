@@ -105,6 +105,40 @@ export default function App() {
     return;
   }
 
+  function saveQuote() {
+    casualWorkers = casualWorkersRef;
+    casualWorkerPay = casualWorkerPayRef;
+    averageCasualHours = averageCasualHoursRef;
+    standardWorkers = standardWorkersRef;
+    standardWorkerPay = standardWorkerPayRef;
+    averageStandardHours = averageStandardHoursRef;
+    expertWorkers = expertWorkersRef;
+    expertWorkerPay = expertWorkerPayRef;
+    averageExpertHours = averageExpertHoursRef;
+
+    fetch("api/quote",
+    {
+      headers: {'Content-Type': 'application/json'},
+      type: 'cors',
+      method: "POST",
+      body: JSON.stringify( { 
+        casual_workers: casualWorkers, 
+        casual_worker_pay: casualWorkerPay, 
+        average_casual_hours: averageCasualHours, 
+        standard_workers: standardWorkers, 
+        standard_worker_pay: standardWorkerPay, 
+        average_standard_hours: averageStandardHours, 
+        expert_workers: expertWorkers, 
+        expert_worker_pay: expertWorkerPay, 
+        average_expert_hours: averageExpertHours
+      })
+    }).then(function (response) {
+      alert("Succesfully Input Quote");
+    }).catch(function (error) {
+      alert("Something went wrong, please try again");
+    })
+  }
+
   function calculateQuote() {
     console.log(1)
   }
@@ -149,6 +183,7 @@ export default function App() {
             <input id="expert-worker-pay" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
             <input id="average-expert-hours" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
           </div>
+          <button id="save-button" onClick={saveQuote}>Save</button>
           <button id="calculate" onClick={calculateQuote}>Calculate</button>
         </div>
         <div id="center">
