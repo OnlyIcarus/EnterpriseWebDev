@@ -135,20 +135,22 @@ export default function App() {
         </div>
       </div>
       <div id="main-body">
-        <div id="inputs">
-          <input id="casual-workers" ref={casualWorkersRef} type="number" placeholder="Number of Casual Workers" />
-          <input id="casual-worker-pay" ref={casualWorkerPayRef} type="number" placeholder="Average pay for casual workers" />
-          <input id="average-casual-hours" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
-          <br />
-          <input id="standard-workers" ref={standardWorkersRef} type="number" placeholder="Number of Standard Workers" />
-          <input id="standard-worker-pay" ref={standardWorkerPayRef} type="number" placeholder="Average pay for standard workers" />
-          <input id="average-standard-hours" ref={averageStandardHoursRef} type="number" placeholder="Average hours worked by standard workers" />
-          <br />
-          <input id="expert-workers" ref={expertWorkersRef} type="number" placeholder="Number of Expert Workers" />
-          <input id="expert-worker-pay" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
-          <input id="average-expert-hours" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
+        <div id="calculate-form">
+          <div id="inputs">
+            <input id="casual-workers" ref={casualWorkersRef} type="number" placeholder="Number of Casual Workers" />
+            <input id="casual-worker-pay" ref={casualWorkerPayRef} type="number" placeholder="Average pay for casual workers" />
+            <input id="average-casual-hours" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
+            <br />
+            <input id="standard-workers" ref={standardWorkersRef} type="number" placeholder="Number of Standard Workers" />
+            <input id="standard-worker-pay" ref={standardWorkerPayRef} type="number" placeholder="Average pay for standard workers" />
+            <input id="average-standard-hours" ref={averageStandardHoursRef} type="number" placeholder="Average hours worked by standard workers" />
+            <br />
+            <input id="expert-workers" ref={expertWorkersRef} type="number" placeholder="Number of Expert Workers" />
+            <input id="expert-worker-pay" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
+            <input id="average-expert-hours" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
+          </div>
+          <button id="calculate" onClick={calculateQuote}>Calculate</button>
         </div>
-        <button id="calculate" onClick={calculateQuote}>Calculate</button>
         <div id="center">
           <div id="signout-button" onClick={handleSignout}>Sign Out</div>
         </div>
