@@ -168,7 +168,7 @@ export default function App() {
         average_expert_hours: averageExpertHours
       })
     }).then(function (response) {
-      alert("Calculated Budget: " + response.json());
+      alert("Calculated Budget: " + response);
     }).catch(function (error) {
       alert("Something went wrong, please try again");
     })
