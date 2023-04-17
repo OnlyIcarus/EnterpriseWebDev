@@ -87,7 +87,7 @@ const calculate = (req, res) => {
     let costExpert = quote.expert_worker_pay * quote.average_expert_hours
     let totalCostExpert = costExpert * quote.expert_workers
     let totalCost = totalCostCasual + totalCostStandard + totalCostExpert
-    res.json(totalCost)
+    return res.json(totalCost)
   } catch (err) {
     return res.status(400).json({
       error: errorHandler.getErrorMessage(err)
