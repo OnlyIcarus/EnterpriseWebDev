@@ -106,15 +106,15 @@ export default function App() {
   }
 
   function saveQuote() {
-    casualWorkers = casualWorkersRef;
-    casualWorkerPay = casualWorkerPayRef;
-    averageCasualHours = averageCasualHoursRef;
-    standardWorkers = standardWorkersRef;
-    standardWorkerPay = standardWorkerPayRef;
-    averageStandardHours = averageStandardHoursRef;
-    expertWorkers = expertWorkersRef;
-    expertWorkerPay = expertWorkerPayRef;
-    averageExpertHours = averageExpertHoursRef;
+    const casualWorkers = casualWorkersRef;
+    const casualWorkerPay = casualWorkerPayRef;
+    const averageCasualHours = averageCasualHoursRef;
+    const standardWorkers = standardWorkersRef;
+    const standardWorkerPay = standardWorkerPayRef;
+    const averageStandardHours = averageStandardHoursRef;
+    const expertWorkers = expertWorkersRef;
+    const expertWorkerPay = expertWorkerPayRef;
+    const averageExpertHours = averageExpertHoursRef;
 
     fetch("api/quote",
     {
