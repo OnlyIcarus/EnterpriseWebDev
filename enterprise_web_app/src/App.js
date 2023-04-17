@@ -80,6 +80,7 @@ export default function App() {
         document.getElementById('expert-workers').style.display = 'inline-block';
         document.getElementById('expert-worker-pay').style.display = 'inline-block';
         document.getElementById('average-expert-hours').style.display = 'inline-block';
+        document.getElementById('calculate').style.display = 'inline-block';
         document.getElementById('signout-button').style.display = 'block';
       }
     })
@@ -102,6 +103,10 @@ export default function App() {
       return;
     }
     return;
+  }
+
+  function calculateQuote() {
+    console.log(1)
   }
 
   return (
@@ -133,6 +138,7 @@ export default function App() {
         <input id="casual-workers" ref={casualWorkersRef} type="number" placeholder="Number of Casual Workers" />
         <input id="casual-worker-pay" ref={casualWorkerPayRef} type="number" placeholder="Average pay for casual workers" />
         <input id="average-casual-hours" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
+        <button id="calculate" onClick={calculateQuote}>Calculate</button>
         <br />
         <input id="standard-workers" ref={standardWorkersRef} type="number" placeholder="Number of Standard Workers" />
         <input id="standard-worker-pay" ref={standardWorkerPayRef} type="number" placeholder="Average pay for standard workers" />
