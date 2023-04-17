@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import crypto from 'crypto'
 
 const QuoteSchema = new mongoose.Schema({
-  casual_workers: String,
+  casual_workers: Number,
   casual_worker_pay: Number,
   average_casual_hours: Number,
   standard_workers: Number,

@@ -9,6 +9,7 @@ router.route('/api/quote')
   .post(quoteCtrl.create)
 
 router.route('/api/quote/:quoteId')
+  .get(quoteCtrl.read)
   .put(quoteCtrl.update)
   .delete(quoteCtrl.remove)
 
