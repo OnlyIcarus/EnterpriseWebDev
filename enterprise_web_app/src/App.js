@@ -69,7 +69,7 @@ export default function App() {
         alert ("Wrong email and password combination");
       } else {
         alert("You have logged in succesfully");
-        holdEmail = email;
+        holdEmail = loginEmailRef.current.value;
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
@@ -117,6 +117,7 @@ export default function App() {
     const expertWorkers = expertWorkersRef.current.value;
     const expertWorkerPay = expertWorkerPayRef.current.value;
     const averageExpertHours = averageExpertHoursRef.current.value;
+    const email = holdEmail
 
     fetch("api/quote",
     {
@@ -124,7 +125,7 @@ export default function App() {
       type: 'cors',
       method: "POST",
       body: JSON.stringify( { 
-        email: holdEmail,
+        email: email,
         casual_workers: casualWorkers, 
         casual_worker_pay: casualWorkerPay, 
         average_casual_hours: averageCasualHours, 
