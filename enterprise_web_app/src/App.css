@@ -114,6 +114,7 @@ body {
 
 #calculate {
   display: none;
+  width: 20%;
 }
 
 #inputs {
