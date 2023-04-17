@@ -72,17 +72,16 @@ export default function App() {
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
-        // document.getElementById('casual_workers').style.display = 'block';
-        // document.getElementById('casual_worker_pay').style.display = 'block';
-        // document.getElementById('average_casual_hours').style.display = 'block';
-        // document.getElementById('standard_workers').style.display = 'block';
-        // document.getElementById('standard_worker_pay').style.display = 'block';
-        // document.getElementById('average_standard_hours').style.display = 'block';
-        // document.getElementById('expert_workers').style.display = 'block';
-        // document.getElementById('expert_worker_pay').style.display = 'block';
-        // document.getElementById('average_expert_hours').style.display = 'block';
-        // document.getElementById('signout-button').style.display = 'block';
-        document.getElementById('main-body').style.display = "block";
+        document.getElementById('casual-workers').style.display = 'block';
+        document.getElementById('casual-worker-pay').style.display = 'block';
+        document.getElementById('average-casual-hours').style.display = 'block';
+        document.getElementById('standard-workers').style.display = 'block';
+        document.getElementById('standard-worker-pay').style.display = 'block';
+        document.getElementById('average-standard-hours').style.display = 'block';
+        document.getElementById('expert-workers').style.display = 'block';
+        document.getElementById('expert-worker_pay').style.display = 'block';
+        document.getElementById('average-expert-hours').style.display = 'block';
+        document.getElementById('signout-button').style.display = 'block';
       }
     })
   }

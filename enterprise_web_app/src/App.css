@@ -80,18 +80,14 @@ body {
   text-align: center;
 }
 
-/* #casual_workers,
-#casual_worker_pay,
-#average_casual_hours,
-#standard_workers,
-#standard_worker_pay,
-#average_standard_hours,
-#expert_workers,
-#expert_worker_pay,
-#average_expert_hours {
-  display: none;
-} */
-
-#main-body {
+#casual-workers,
+#casual-worker-pay,
+#average-casual-hours,
+#standard-workers,
+#standard-worker-pay,
+#average-standard-hours,
+#expert-workers,
+#expert-worker-pay,
+#average-expert-hours {
   display: none;
 }
