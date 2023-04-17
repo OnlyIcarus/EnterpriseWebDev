@@ -35,10 +35,12 @@ export default function App() {
       if (document.getElementById('register-container').style.display == 'none') {
           document.getElementById('register-container').style.display = 'block';
           document.getElementById('login-container').style.display = 'none';
+          document.getElementById('register-button').textContent = 'Already a User? Login Here';
       }
       else {
           document.getElementById('register-container').style.display = 'none';
           document.getElementById('login-container').style.display = 'block';
+          document.getElementById('register-button').textContent = 'Back to Registration';
       }
     }
   }
