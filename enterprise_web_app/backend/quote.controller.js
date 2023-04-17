@@ -80,12 +80,12 @@ const read = (req, res) => {
 const calculate = (req, res) => {
   try {
     let quote = req.profile
-    let costCasual = quote.casual_worker_pay * average_casual_hours
-    let totalCostCasual = costCasual * casual_workers
-    let costStandard = quote.standard_worker_pay * average_standard_hours
-    let totalCostStandard = costStandard * standard_workers
-    let costExpert = quote.expert_worker_pay * average_expert_hours
-    let totalCostExpert = costExpert * expert_workers
+    let costCasual = quote.casual_worker_pay * quote.average_casual_hours
+    let totalCostCasual = costCasual * quote.casual_workers
+    let costStandard = quote.standard_worker_pay * quote.average_standard_hours
+    let totalCostStandard = costStandard * quote.standard_workers
+    let costExpert = quote.expert_worker_pay * quote.average_expert_hours
+    let totalCostExpert = costExpert * quote.expert_workers
     let totalCost = totalCostCasual + totalCostStandard + totalCostExpert
     res.json(totalCost)
   } catch (err) {
