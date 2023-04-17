@@ -183,7 +183,7 @@ export default function App() {
             <input id="expert-worker-pay" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
             <input id="average-expert-hours" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
           </div>
-          <button id="calculate" onClick={calculateQuote}>Calculate</button>
+          <button id="calculate" onClick={calculateQuote}>Save</button>
         </div>
         <div id="center">
           <div id="signout-button" onClick={handleSignout}>Sign Out</div>

@@ -51,8 +51,7 @@ body {
 
 #signout-button,
 #register-button,
-#calculate,
-#save-button {
+#calculate {
   width: 60%;
   background: var(--white);
   color: var(--bgFormBut);
@@ -116,8 +115,7 @@ body {
   width: 300px;
 }
 
-#calculate,
-#save-button {
+#calculate {
   display: none;
   width: 15%;
   margin-left: 26%;
