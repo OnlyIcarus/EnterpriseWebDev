@@ -6,6 +6,7 @@ const create = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8000/api/users");
   const quote = new Quote(req.body)
   try {
+    quote.markModified('');
     await quote.save()
     return res.status(200).json({
       message: "Successfully inputted quote"
