@@ -78,7 +78,7 @@ export default function App() {
         document.getElementById('standard-worker-pay').style.display = 'block';
         document.getElementById('average-standard-hours').style.display = 'block';
         document.getElementById('expert-workers').style.display = 'block';
-        document.getElementById('expert-worker_pay').style.display = 'block';
+        document.getElementById('expert-worker-pay').style.display = 'block';
         document.getElementById('average-expert-hours').style.display = 'block';
         document.getElementById('signout-button').style.display = 'block';
       }
