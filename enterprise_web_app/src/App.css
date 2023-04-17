@@ -107,3 +107,7 @@ body {
 #average-expert-hours {
   width: 300px;
 }
+
+#calculate {
+  display: none;
+}
