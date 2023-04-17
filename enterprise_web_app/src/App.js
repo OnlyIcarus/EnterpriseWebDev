@@ -118,6 +118,7 @@ export default function App() {
     const expertWorkerPay = expertWorkerPayRef.current.value;
     const averageExpertHours = averageExpertHoursRef.current.value;
     const email = holdEmail
+    console.log(email)
 
     fetch("api/quote",
     {
