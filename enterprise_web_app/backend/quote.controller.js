@@ -92,7 +92,7 @@ const listByEmail = async (req, res, next, email) => {
 
 const calculate = (req, res) => {
   try {
-    const quote = new Quote(req.body)
+    const quote = req.profile
     let costCasual = quote.casual_worker_pay * quote.average_casual_hours
     let totalCostCasual = costCasual * quote.casual_workers
     let costStandard = quote.standard_worker_pay * quote.average_standard_hours
