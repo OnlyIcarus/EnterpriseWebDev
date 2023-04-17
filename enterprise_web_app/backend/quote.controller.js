@@ -79,7 +79,7 @@ const read = (req, res) => {
 
 const calculate = (req, res) => {
   try {
-    let quote = req.profile
+    const quote = new Quote(req.body)
     let costCasual = quote.casual_worker_pay * quote.average_casual_hours
     let totalCostCasual = costCasual * quote.casual_workers
     let costStandard = quote.standard_worker_pay * quote.average_standard_hours

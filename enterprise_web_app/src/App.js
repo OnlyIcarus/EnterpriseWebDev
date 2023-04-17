@@ -141,7 +141,37 @@ export default function App() {
   }
 
   function calculateQuote() {
-    console.log(1)
+    const casualWorkers = casualWorkersRef.current.value;
+    const casualWorkerPay = casualWorkerPayRef.current.value;
+    const averageCasualHours = averageCasualHoursRef.current.value;
+    const standardWorkers = standardWorkersRef.current.value;
+    const standardWorkerPay = standardWorkerPayRef.current.value;
+    const averageStandardHours = averageStandardHoursRef.current.value;
+    const expertWorkers = expertWorkersRef.current.value;
+    const expertWorkerPay = expertWorkerPayRef.current.value;
+    const averageExpertHours = averageExpertHoursRef.current.value;
+
+    fetch("api/calculate",
+    {
+      headers: {'Content-Type': 'application/json'},
+      type: 'cors',
+      method: "POST",
+      body: JSON.stringify( { 
+        casual_workers: casualWorkers, 
+        casual_worker_pay: casualWorkerPay, 
+        average_casual_hours: averageCasualHours, 
+        standard_workers: standardWorkers, 
+        standard_worker_pay: standardWorkerPay, 
+        average_standard_hours: averageStandardHours, 
+        expert_workers: expertWorkers, 
+        expert_worker_pay: expertWorkerPay, 
+        average_expert_hours: averageExpertHours
+      })
+    }).then(function (response) {
+      alert("Calculated Budget: " + response.json());
+    }).catch(function (error) {
+      alert("Something went wrong, please try again");
+    })
   }
 
   return (
