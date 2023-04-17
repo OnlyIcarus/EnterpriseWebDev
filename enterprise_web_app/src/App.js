@@ -82,7 +82,6 @@ export default function App() {
         document.getElementById('expert-workers').style.display = 'inline-block';
         document.getElementById('expert-worker-pay').style.display = 'inline-block';
         document.getElementById('average-expert-hours').style.display = 'inline-block';
-        document.getElementById('save-button').style.display = 'block';
         document.getElementById('calculate').style.display = 'block';
         document.getElementById('signout-button').style.display = 'block';
       }
