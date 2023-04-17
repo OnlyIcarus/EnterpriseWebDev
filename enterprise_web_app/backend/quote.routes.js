@@ -16,6 +16,10 @@ router.route('/api/quote/:quoteId')
 router.route('/api/calculate/:quoteId')
   .get(quoteCtrl.calculate)
 
+router.route('/api/list/:email')
+  .get(quoteCtrl.listByEmail)
+
 router.param('quoteId', quoteCtrl.quoteById)
+router.param('email', quoteCtrl.listByEmail)
   
 export default router
