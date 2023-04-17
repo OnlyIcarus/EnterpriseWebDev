@@ -155,7 +155,7 @@ export default function App() {
     {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
-      method: "POST",
+      method: "GET",
       body: JSON.stringify( { 
         casual_workers: casualWorkers, 
         casual_worker_pay: casualWorkerPay, 
