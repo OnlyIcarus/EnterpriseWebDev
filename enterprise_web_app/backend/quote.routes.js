@@ -13,7 +13,7 @@ router.route('/api/quote/:quoteId')
   .put(quoteCtrl.update)
   .delete(quoteCtrl.remove)
 
-router.route('api/calculate/:quoteId')
+router.route('/api/calculate/:quoteId')
   .get(quoteCtrl.calculate)
 
 router.param('quoteId', quoteCtrl.quoteById)
