@@ -72,7 +72,15 @@ export default function App() {
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
-        document.getElementsByClassName('invis').style.display = 'block';
+        document.getElementById('casual_workers').style.display = 'block';
+        document.getElementById('casual_worker_pay').style.display = 'block';
+        document.getElementById('average_casual_pay').style.display = 'block';
+        document.getElementById('standard_workers').style.display = 'block';
+        document.getElementById('standard_worker_pay').style.display = 'block';
+        document.getElementById('average_standard_pay').style.display = 'block';
+        document.getElementById('expert_workers').style.display = 'block';
+        document.getElementById('expert_worker_pay').style.display = 'block';
+        document.getElementById('average_expert_pay').style.display = 'block';
         document.getElementById('signout-button').style.display = 'block';
       }
     })
@@ -125,13 +133,13 @@ export default function App() {
       <div id="main-body">
         <div id="casual_workers" className="invis" ref={casualWorkersRef} type="number" placeholder="Number of Casual Workers" />
         <div id="casual_worker_pay" className="invis" ref={casualWorkerPayRef} type="number" placeholder="Average pay for casual workers" />
-        <div id="average_casual_pay" className="invis" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
+        <div id="average_casual_hours" className="invis" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
         <div id="standard_workers" className="invis" ref={standardWorkersRef} type="number" placeholder="Number of Standard Workers" />
         <div id="standard_worker_pay" className="invis" ref={standardWorkerPayRef} type="number" placeholder="Average pay for standard workers" />
-        <div id="average_standard_pay" className="invis" ref={averageStandardHoursRef} type="number" placeholder="Average hours worked by standard workers" />
+        <div id="average_standard_hours" className="invis" ref={averageStandardHoursRef} type="number" placeholder="Average hours worked by standard workers" />
         <div id="expert_workers" className="invis" ref={expertWorkersRef} type="number" placeholder="Number of Expert Workers" />
         <div id="expert_worker_pay" className="invis" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
-        <div id="average_expert_pay" className="invis" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
+        <div id="average_expert_hours" className="invis" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
         <div id="center">
           <div id="signout-button" onClick={handleSignout}>Sign Out</div>
         </div>
