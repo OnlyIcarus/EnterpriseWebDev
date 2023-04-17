@@ -77,6 +77,24 @@ const read = (req, res) => {
   return res.json(req.profile)
 }
 
+const calculate = (req, res) => {
+  try {
+    let quote = req.profile
+    let costCasual = quote.casual_worker_pay * average_casual_hours
+    let totalCostCasual = costCasual * casual_workers
+    let costStandard = quote.standard_worker_pay * average_standard_hours
+    let totalCostStandard = costStandard * standard_workers
+    let costExpert = quote.expert_worker_pay * average_expert_hours
+    let totalCostExpert = costExpert * expert_workers
+    let totalCost = totalCostCasual + totalCostStandard + totalCostExpert
+    return res.json(totalCost)
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
+
 
 export default {
   create,
