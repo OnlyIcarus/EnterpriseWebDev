@@ -18,6 +18,7 @@ export default function App() {
   const expertWorkerPayRef = useRef()
   const averageExpertHoursRef = useRef()
   const physicalAssetsRef = useRef()
+  let holdEmail;
 
   function handleRegister() {
     let username = usernameRef.current.value
@@ -68,6 +69,7 @@ export default function App() {
         alert ("Wrong email and password combination");
       } else {
         alert("You have logged in succesfully");
+        holdEmail = email;
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
@@ -106,7 +108,7 @@ export default function App() {
     return;
   }
 
-  function saveQuote() {
+  function calculateQuote() {
     const casualWorkers = casualWorkersRef.current.value;
     const casualWorkerPay = casualWorkerPayRef.current.value;
     const averageCasualHours = averageCasualHoursRef.current.value;
@@ -123,6 +125,7 @@ export default function App() {
       type: 'cors',
       method: "POST",
       body: JSON.stringify( { 
+        email: holdEmail,
         casual_workers: casualWorkers, 
         casual_worker_pay: casualWorkerPay, 
         average_casual_hours: averageCasualHours, 
@@ -135,40 +138,6 @@ export default function App() {
       })
     }).then(function (response) {
       alert("Succesfully Input Quote");
-    }).catch(function (error) {
-      alert("Something went wrong, please try again");
-    })
-  }
-
-  function calculateQuote() {
-    const casualWorkers = casualWorkersRef.current.value;
-    const casualWorkerPay = casualWorkerPayRef.current.value;
-    const averageCasualHours = averageCasualHoursRef.current.value;
-    const standardWorkers = standardWorkersRef.current.value;
-    const standardWorkerPay = standardWorkerPayRef.current.value;
-    const averageStandardHours = averageStandardHoursRef.current.value;
-    const expertWorkers = expertWorkersRef.current.value;
-    const expertWorkerPay = expertWorkerPayRef.current.value;
-    const averageExpertHours = averageExpertHoursRef.current.value;
-
-    fetch("api/calculate",
-    {
-      headers: {'Content-Type': 'application/json'},
-      type: 'cors',
-      method: "GET",
-      body: JSON.stringify( { 
-        casual_workers: casualWorkers, 
-        casual_worker_pay: casualWorkerPay, 
-        average_casual_hours: averageCasualHours, 
-        standard_workers: standardWorkers, 
-        standard_worker_pay: standardWorkerPay, 
-        average_standard_hours: averageStandardHours, 
-        expert_workers: expertWorkers, 
-        expert_worker_pay: expertWorkerPay, 
-        average_expert_hours: averageExpertHours
-      })
-    }).then((response) => response.json()).then(function (quote) {
-      alert("Calculated Budget: " + quote.totalCost);
     }).catch(function (error) {
       alert("Something went wrong, please try again");
     })
@@ -214,7 +183,6 @@ export default function App() {
             <input id="expert-worker-pay" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
             <input id="average-expert-hours" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
           </div>
-          <button id="save-button" onClick={saveQuote}>Save</button>
           <button id="calculate" onClick={calculateQuote}>Calculate</button>
         </div>
         <div id="center">

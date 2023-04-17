@@ -2,6 +2,13 @@ import mongoose from 'mongoose'
 import crypto from 'crypto'
 
 const QuoteSchema = new mongoose.Schema({
+  email: {
+    index: true,
+    type: String,
+    trim: true,
+    match: [/.+\@.+\..+/, 'Please fill a valid email address'],
+    required: 'Email is required'
+  },
   casual_workers: Number,
   casual_worker_pay: Number,
   average_casual_hours: Number,
