@@ -79,7 +79,7 @@ const read = (req, res) => {
 
 const listByEmail = async (req, res, email) => {
   try {
-    let quotes = await Quote.find({email: email}).select('email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
+    let quotes = await Quote.find({email: {email}}).select('email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
     console.log("Got quotes" + quotes)
     res.json(quotes)
   } catch (err) {
