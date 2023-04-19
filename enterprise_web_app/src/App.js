@@ -138,6 +138,10 @@ export default function App() {
     })
   }
 
+  function update() {
+    console.log(1)
+  }
+
   function quoteTable(email) {
     $("#quote-tbody tr").remove();
     fetch("api/list/" + email,
@@ -155,8 +159,14 @@ export default function App() {
         let name = document.createTextNode(data[i].name);
         let newCellTwo = newRow.insertCell();
         let id = document.createTextNode(data[i]._id);
+        let newCellThree = newRow.insertCell();
+        let update = document.createElement('input');
+        update.type = "button";
+        update.value = "Update";
+        update.onclick = update();
         newCell.appendChild(name);
         newCellTwo.appendChild(id);
+        newCellThree.appendChild(update);
       }
     });
   }
