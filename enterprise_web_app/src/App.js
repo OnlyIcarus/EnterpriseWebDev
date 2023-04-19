@@ -168,7 +168,18 @@ export default function App() {
           remove.type = "button";
           remove.value = "Delete";
           remove.onclick = (function () {
-            console.log(data[i]._id);
+            if (window.alert("Are you sure you want to delete this quote?") === true) {
+              fetch("api/quote/" + data[i]._id,
+                {
+                  headers: { 'Content-Type': 'application/json' },
+                  type: 'cors',
+                  method: "GET",
+                }).then(function (response) {
+                  return response.json();
+                }).then(function (data) {
+                  alert("Budget for this quote: £" + data)
+                })
+            }
           });
           let newCellFive = newRow.insertCell();
           let calculate = document.createElement('input');
