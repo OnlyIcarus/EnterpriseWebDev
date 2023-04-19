@@ -146,9 +146,7 @@ export default function App() {
       type: 'cors',
       method: "GET",
     }).then(function (response) {
-      var row = document.createElement("TR");
-      row.insertCell(response[0].name)
-      $("#quote-tbody").append(row)
+      console.log(response[0].name)
     }).catch(function (error) {
       alert("Something went wrong, please try again");
     })
