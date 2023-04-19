@@ -138,10 +138,6 @@ export default function App() {
     })
   }
 
-  function update() {
-    console.log(1)
-  }
-
   function quoteTable(email) {
     $("#quote-tbody tr").remove();
     fetch("api/list/" + email,
@@ -163,7 +159,9 @@ export default function App() {
         let update = document.createElement('input');
         update.type = "button";
         update.value = "Update";
-        update.onclick = update;
+        update.onclick = (function (entry) {
+          console.log(1);
+        })(entry);
         newCell.appendChild(name);
         newCellTwo.appendChild(id);
         newCellThree.appendChild(update);
