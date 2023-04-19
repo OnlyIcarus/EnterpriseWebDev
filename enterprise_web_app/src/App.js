@@ -115,30 +115,57 @@ export default function App() {
     const averageExpertHours = averageExpertHoursRef.current.value;
     const email = holdEmail;
 
-    fetch("api/quote",
-      {
-        headers: { 'Content-Type': 'application/json' },
-        type: 'cors',
-        method: "POST",
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          casual_workers: casualWorkers,
-          casual_worker_pay: casualWorkerPay,
-          average_casual_hours: averageCasualHours,
-          standard_workers: standardWorkers,
-          standard_worker_pay: standardWorkerPay,
-          average_standard_hours: averageStandardHours,
-          expert_workers: expertWorkers,
-          expert_worker_pay: expertWorkerPay,
-          average_expert_hours: averageExpertHours
+    if (updating === false) {
+      fetch("api/quote",
+        {
+          headers: { 'Content-Type': 'application/json' },
+          type: 'cors',
+          method: "POST",
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            casual_workers: casualWorkers,
+            casual_worker_pay: casualWorkerPay,
+            average_casual_hours: averageCasualHours,
+            standard_workers: standardWorkers,
+            standard_worker_pay: standardWorkerPay,
+            average_standard_hours: averageStandardHours,
+            expert_workers: expertWorkers,
+            expert_worker_pay: expertWorkerPay,
+            average_expert_hours: averageExpertHours
+          })
+        }).then(function (response) {
+          alert("Succesfully Input Quote");
+        }).catch(function (error) {
+          alert("Something went wrong, please try again");
         })
-      }).then(function (response) {
-        alert("Succesfully Input Quote");
-      }).catch(function (error) {
-        alert("Something went wrong, please try again");
-      })
       quoteTable(email);
+    } else {
+      fetch("api/quote",
+        {
+          headers: { 'Content-Type': 'application/json' },
+          type: 'cors',
+          method: "PUT",
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            casual_workers: casualWorkers,
+            casual_worker_pay: casualWorkerPay,
+            average_casual_hours: averageCasualHours,
+            standard_workers: standardWorkers,
+            standard_worker_pay: standardWorkerPay,
+            average_standard_hours: averageStandardHours,
+            expert_workers: expertWorkers,
+            expert_worker_pay: expertWorkerPay,
+            average_expert_hours: averageExpertHours
+          })
+        }).then(function (response) {
+          alert("Succesfully Updated Quote");
+        }).catch(function (error) {
+          alert("Something went wrong, please try again");
+        })
+      quoteTable(email);
+    }
   }
 
   function quoteTable(email) {
