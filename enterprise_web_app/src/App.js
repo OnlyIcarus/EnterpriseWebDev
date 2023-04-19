@@ -162,9 +162,25 @@ export default function App() {
         update.onclick = (function () {
           console.log(data[i]._id);
         });
+        let newCellFour = newRow.insertCell();
+        let remove = document.createElement('input');
+        update.type = "button";
+        update.value = "Delete";
+        update.onclick = (function () {
+          console.log(data[i]._id);
+        });
+        let newCellFive = newRow.insertCell();
+        let calculate = document.createElement('input');
+        update.type = "button";
+        update.value = "Calculate";
+        update.onclick = (function () {
+          console.log(data[i]._id);
+        });
         newCell.appendChild(name);
         newCellTwo.appendChild(id);
         newCellThree.appendChild(update);
+        newCellFour.appendChild(remove);
+        newCellFive.appendChild(calculate);
       }
     });
   }
