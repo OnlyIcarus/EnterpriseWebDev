@@ -20,6 +20,7 @@ export default function App() {
   const averageExpertHoursRef = useRef()
   const quoteName = useRef()
   const physicalAssetsRef = useRef()
+  let updating = false;
   let holdEmail;
 
   function handleRegister() {
@@ -162,7 +163,8 @@ export default function App() {
           update.type = "button";
           update.value = "Update";
           update.onclick = (function () {
-            console.log(data[i]._id);
+            updating = true;
+            document.getElementById('quote-name').innerHTML(data[i].name)
           });
           let newCellFour = newRow.insertCell();
           let remove = document.createElement('input');
