@@ -140,6 +140,16 @@ export default function App() {
 
   function quoteTable(email) {
     $("#quote-tbody tr").remove();
+    fetch("api/list/" + email,
+    {
+      headers: {'Content-Type': 'application/json'},
+      type: 'cors',
+      method: "GET",
+    }).then(function (response) {
+      alert("Succesfully Retrieved Data");
+    }).catch(function (error) {
+      alert("Something went wrong, please try again");
+    })
   }
 
   return (
