@@ -92,6 +92,7 @@ const listByEmail = async (req, res, next, email) => {
 
 const calculate = (req, res) => {
   try {
+    const random = Math.random() + 0.5
     const quote = req.profile
     let costCasual = quote.casual_worker_pay * quote.average_casual_hours
     let totalCostCasual = costCasual * quote.casual_workers
@@ -99,6 +100,14 @@ const calculate = (req, res) => {
     let totalCostStandard = costStandard * quote.standard_workers
     let costExpert = quote.expert_worker_pay * quote.average_expert_hours
     let totalCostExpert = costExpert * quote.expert_workers
+    const randomAgain = Math.floor(Math.random() * 3)
+    if (randomAgain === 0) {
+      totalCostCasual *= random;
+    } else if (randomAgain === 1) {
+      totalCostStandard *= random;
+    } else if (randomAgain === 2) {
+      totalCostExpert *= random;
+    }
     let totalCost = totalCostCasual + totalCostStandard + totalCostExpert
     return res.json(totalCost)
   } catch (err) {
