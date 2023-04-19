@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import {v4 as uuidv4} from 'uuid';
 import './App.css'
+import $ from 'jquery'
 
 export default function App() {
   const usernameRef = useRef()
@@ -138,9 +139,7 @@ export default function App() {
   }
 
   function quoteTable(email) {
-    var new_tbody = document.createElement('tbody');
-    populate_with_new_rows(new_tbody);
-    old_tbody.parentNode.replaceChild(new_tbody, old_tbody)
+    $("#quote-tbody tr").remove();
   }
 
   return (
