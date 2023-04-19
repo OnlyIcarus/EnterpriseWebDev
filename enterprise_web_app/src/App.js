@@ -164,16 +164,16 @@ export default function App() {
         });
         let newCellFour = newRow.insertCell();
         let remove = document.createElement('input');
-        update.type = "button";
-        update.value = "Delete";
-        update.onclick = (function () {
+        remove.type = "button";
+        remove.value = "Delete";
+        remove.onclick = (function () {
           console.log(data[i]._id);
         });
         let newCellFive = newRow.insertCell();
         let calculate = document.createElement('input');
-        update.type = "button";
-        update.value = "Calculate";
-        update.onclick = (function () {
+        calculate.type = "button";
+        calculate.value = "Calculate";
+        calculate.onclick = (function () {
           console.log(data[i]._id);
         });
         newCell.appendChild(name);
