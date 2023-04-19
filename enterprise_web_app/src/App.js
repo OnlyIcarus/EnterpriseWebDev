@@ -174,7 +174,6 @@ export default function App() {
           calculate.type = "button";
           calculate.value = "Calculate";
           calculate.onclick = (function () {
-            console.log(data[i]._id);
             fetch("api/calculate/" + data[i]._id,
               {
                 headers: { 'Content-Type': 'application/json' },
@@ -183,7 +182,7 @@ export default function App() {
               }).then(function (response) {
                 return response.json();
               }).then(function (data) {
-                console.log(data)
+                alert("£" + data)
               })
             })
             newCell.appendChild(name);
