@@ -152,6 +152,7 @@ export default function App() {
         for (let i = 0; i < data.length; i++) {
           let tBody = document.getElementById('quote-tbody');
           let newRow = tBody.insertRow();
+          newRow.id(data[0]._id)
           let newCell = newRow.insertCell();
           let name = document.createTextNode(data[i].name);
           let newCellTwo = newRow.insertCell();
@@ -173,11 +174,12 @@ export default function App() {
                 {
                   headers: { 'Content-Type': 'application/json' },
                   type: 'cors',
-                  method: "GET",
+                  method: "DELETE",
                 }).then(function (response) {
-                  return response.json();
-                }).then(function (data) {
-                  alert("Budget for this quote: £" + data)
+                  document.getElementById(data[0]._id).deleteRow(0);
+                  alert("Succesfully Deleted Quote")
+                }).then(function (error) {
+                  alert("Something went wrong, please try again");
                 })
             }
           });
