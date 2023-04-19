@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css'
 import $ from 'jquery'
 
@@ -28,16 +28,16 @@ export default function App() {
     let email = emailRef.current.value
 
     fetch("api/users",
-    {
-      headers: {'Content-Type': 'application/json'},
-      type: 'cors',
-      method: "POST",
-      body: JSON.stringify( { name: username, password: password, email: email} )
-    }).then(function (response) {
-      alert("Succesfully Registered User");
-    }).catch(function (error) {
-      alert("Something went wrong, please try again");
-    })
+      {
+        headers: { 'Content-Type': 'application/json' },
+        type: 'cors',
+        method: "POST",
+        body: JSON.stringify({ name: username, password: password, email: email })
+      }).then(function (response) {
+        alert("Succesfully Registered User");
+      }).catch(function (error) {
+        alert("Something went wrong, please try again");
+      })
 
   }
 
@@ -45,14 +45,14 @@ export default function App() {
     if (document.getElementById('register-container')) {
 
       if (document.getElementById('register-container').style.display === 'none') {
-          document.getElementById('register-container').style.display = 'block';
-          document.getElementById('login-container').style.display = 'none';
-          document.getElementById('register-button').textContent = 'Already a User? Login Here';
+        document.getElementById('register-container').style.display = 'block';
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('register-button').textContent = 'Already a User? Login Here';
       }
       else {
-          document.getElementById('register-container').style.display = 'none';
-          document.getElementById('login-container').style.display = 'block';
-          document.getElementById('register-button').textContent = 'Back to Registration';
+        document.getElementById('register-container').style.display = 'none';
+        document.getElementById('login-container').style.display = 'block';
+        document.getElementById('register-button').textContent = 'Back to Registration';
       }
     }
   }
@@ -62,38 +62,38 @@ export default function App() {
     const password = loginPassRef.current.value;
 
     fetch("auth/signin",
-    {
-      headers: {'Content-Type': 'application/json'},
-      method: "POST",
-      body: JSON.stringify( { email: email, password: password} )
-    }).then(function (response) {
-      if (response.status === 401) {
-        alert ("Wrong email and password combination");
-      } else {
-        alert("You have logged in succesfully");
-        holdEmail = loginEmailRef.current.value;
-        document.getElementById('register-container').style.display = 'none';
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('register-button').style.display = 'none';
-        document.getElementById('main-body').style.display = 'block';
-        quoteTable(email);
-      }
-    })
+      {
+        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        body: JSON.stringify({ email: email, password: password })
+      }).then(function (response) {
+        if (response.status === 401) {
+          alert("Wrong email and password combination");
+        } else {
+          alert("You have logged in succesfully");
+          holdEmail = loginEmailRef.current.value;
+          document.getElementById('register-container').style.display = 'none';
+          document.getElementById('login-container').style.display = 'none';
+          document.getElementById('register-button').style.display = 'none';
+          document.getElementById('main-body').style.display = 'block';
+          quoteTable(email);
+        }
+      })
   }
 
   function handleSignout() {
     if (window.confirm('Are you sure you want to sign out?') === true) {
       console.log('Signed Out')
       fetch("auth/signout",
-      {
-        headers: {'Content-Type': 'application/json'},
-        method: "GET"
-      }).then(function (response) {
-        alert('Succesfully signed out')
-        document.getElementById('register-container').style.display = 'block';
-        document.getElementById('register-button').style.display = 'block';
-        document.getElementById('signout-button').style.display = 'none';
-      })
+        {
+          headers: { 'Content-Type': 'application/json' },
+          method: "GET"
+        }).then(function (response) {
+          alert('Succesfully signed out')
+          document.getElementById('register-container').style.display = 'block';
+          document.getElementById('register-button').style.display = 'block';
+          document.getElementById('signout-button').style.display = 'none';
+        })
     } else {
       return;
     }
@@ -114,74 +114,83 @@ export default function App() {
     const email = holdEmail;
 
     fetch("api/quote",
-    {
-      headers: {'Content-Type': 'application/json'},
-      type: 'cors',
-      method: "POST",
-      body: JSON.stringify( { 
-        name: name,
-        email: email,
-        casual_workers: casualWorkers, 
-        casual_worker_pay: casualWorkerPay, 
-        average_casual_hours: averageCasualHours, 
-        standard_workers: standardWorkers, 
-        standard_worker_pay: standardWorkerPay, 
-        average_standard_hours: averageStandardHours, 
-        expert_workers: expertWorkers, 
-        expert_worker_pay: expertWorkerPay, 
-        average_expert_hours: averageExpertHours
+      {
+        headers: { 'Content-Type': 'application/json' },
+        type: 'cors',
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          casual_workers: casualWorkers,
+          casual_worker_pay: casualWorkerPay,
+          average_casual_hours: averageCasualHours,
+          standard_workers: standardWorkers,
+          standard_worker_pay: standardWorkerPay,
+          average_standard_hours: averageStandardHours,
+          expert_workers: expertWorkers,
+          expert_worker_pay: expertWorkerPay,
+          average_expert_hours: averageExpertHours
+        })
+      }).then(function (response) {
+        alert("Succesfully Input Quote");
+      }).catch(function (error) {
+        alert("Something went wrong, please try again");
       })
-    }).then(function (response) {
-      alert("Succesfully Input Quote");
-    }).catch(function (error) {
-      alert("Something went wrong, please try again");
-    })
   }
 
   function quoteTable(email) {
     $("#quote-tbody tr").remove();
     fetch("api/list/" + email,
-    {
-      headers: {'Content-Type': 'application/json'},
-      type: 'cors',
-      method: "GET",
-    }).then(function(response) {
-      return response.json();
-    }).then(function(data) {
-      for(let i = 0; i < data.length; i++) {
-        let tBody = document.getElementById('quote-tbody');
-        let newRow = tBody.insertRow();
-        let newCell = newRow.insertCell();
-        let name = document.createTextNode(data[i].name);
-        let newCellTwo = newRow.insertCell();
-        let id = document.createTextNode(data[i]._id);
-        let newCellThree = newRow.insertCell();
-        let update = document.createElement('input');
-        update.type = "button";
-        update.value = "Update";
-        update.onclick = (function () {
-          console.log(data[i]._id);
-        });
-        let newCellFour = newRow.insertCell();
-        let remove = document.createElement('input');
-        remove.type = "button";
-        remove.value = "Delete";
-        remove.onclick = (function () {
-          console.log(data[i]._id);
-        });
-        let newCellFive = newRow.insertCell();
-        let calculate = document.createElement('input');
-        calculate.type = "button";
-        calculate.value = "Calculate";
-        calculate.onclick = (function () {
-          console.log(data[i]._id);
-        });
-        newCell.appendChild(name);
-        newCellTwo.appendChild(id);
-        newCellThree.appendChild(update);
-        newCellFour.appendChild(remove);
-        newCellFive.appendChild(calculate);
-      }
+      {
+        headers: { 'Content-Type': 'application/json' },
+        type: 'cors',
+        method: "GET",
+      }).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        for (let i = 0; i < data.length; i++) {
+          let tBody = document.getElementById('quote-tbody');
+          let newRow = tBody.insertRow();
+          let newCell = newRow.insertCell();
+          let name = document.createTextNode(data[i].name);
+          let newCellTwo = newRow.insertCell();
+          let id = document.createTextNode(data[i]._id);
+          let newCellThree = newRow.insertCell();
+          let update = document.createElement('input');
+          update.type = "button";
+          update.value = "Update";
+          update.onclick = (function () {
+            console.log(data[i]._id);
+          });
+          let newCellFour = newRow.insertCell();
+          let remove = document.createElement('input');
+          remove.type = "button";
+          remove.value = "Delete";
+          remove.onclick = (function () {
+            console.log(data[i]._id);
+          });
+          let newCellFive = newRow.insertCell();
+          let calculate = document.createElement('input');
+          calculate.type = "button";
+          calculate.value = "Calculate";
+          calculate.onclick = (function () {
+            console.log(data[i]._id);
+            fetch("api/quote/" + data[i]._id,
+              {
+                headers: { 'Content-Type': 'application/json' },
+                type: 'cors',
+                method: "GET",
+              }).then(function (response) {
+                return response.json();
+              }).then(function (data) {
+                console.log(data)
+              })
+            newCell.appendChild(name);
+            newCellTwo.appendChild(id);
+            newCellThree.appendChild(update);
+            newCellFour.appendChild(remove);
+            newCellFive.appendChild(calculate);
+          }
     });
   }
 
