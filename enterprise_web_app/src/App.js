@@ -172,7 +172,6 @@ export default function App() {
               console.log("accepted");
               fetch("api/quote/" + data[i]._id,
                 {
-                  headers: { 'Content-Type': 'application/json' },
                   type: 'cors',
                   method: "DELETE",
                 }).then(function (response) {
