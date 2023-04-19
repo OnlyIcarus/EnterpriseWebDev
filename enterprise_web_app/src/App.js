@@ -149,7 +149,7 @@ export default function App() {
       return response.json();
     }).then(function(data) {
       console.log(data);
-    })
+    });
 
   return (
     <div id="container">
