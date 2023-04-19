@@ -152,7 +152,7 @@ export default function App() {
         for (let i = 0; i < data.length; i++) {
           let tBody = document.getElementById('quote-tbody');
           let newRow = tBody.insertRow();
-          newRow.id(data[0]._id)
+          newRow.setAttribute("id", data[0]._id)
           let newCell = newRow.insertCell();
           let name = document.createTextNode(data[i].name);
           let newCellTwo = newRow.insertCell();
