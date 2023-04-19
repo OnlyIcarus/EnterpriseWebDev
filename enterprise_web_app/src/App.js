@@ -98,7 +98,7 @@ export default function App() {
     return;
   }
 
-  function calculateQuote() {
+  function saveQuote() {
     const name = quoteName.current.value;
     const casualWorkers = casualWorkersRef.current.value;
     const casualWorkerPay = casualWorkerPayRef.current.value;
@@ -178,7 +178,7 @@ export default function App() {
             <input id="expert-worker-pay" className="inputCalculate" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
             <input id="average-expert-hours" className="inputCalculate hoursWidth" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
           </div>
-          <button id="calculate" className="buttons" onClick={calculateQuote}>Save</button>
+          <button id="calculate" className="buttons" onClick={saveQuote}>Save</button>
         </div>
         <div id="center">
           <div id="signout-button" className="buttons" onClick={handleSignout}>Sign Out</div>
