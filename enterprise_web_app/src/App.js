@@ -145,8 +145,8 @@ export default function App() {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
       method: "GET",
-    }).then(function (response) {
-      console.log(response[0])
+    }).then(function (data) {
+      console.log(data.body)
     }).catch(function (error) {
       alert("Something went wrong, please try again");
     })
