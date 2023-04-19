@@ -185,6 +185,7 @@ export default function App() {
               }).then(function (data) {
                 console.log(data)
               })
+            })
             newCell.appendChild(name);
             newCellTwo.appendChild(id);
             newCellThree.appendChild(update);
