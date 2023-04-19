@@ -32,10 +32,7 @@ body {
   margin-left: 15%;
 }
 
-#signout-button,
-#register-button,
-#calculate,
-#save-button,
+.buttons,
 .inputLogin {
   padding: 5px;
   margin-bottom: 15px;
@@ -49,9 +46,7 @@ body {
     transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
 }
 
-#signout-button,
-#register-button,
-#calculate {
+.buttons {
   width: 60%;
   background: var(--white);
   color: var(--bgFormBut);
@@ -65,14 +60,9 @@ body {
   transform: scale(1.02);
 }
 
-#signout-button:enabled:hover,
-#signout-button:hover,
-#register-button:enabled:hover,
-#register-button:hover,
-#calculate:enabled:hover,
-#calculate:hover
-#save-button:enabled:hover
-#save-button:hover {
+
+.buttons:enabled:hover,
+.buttons:hover {
   background: var(--bgFormElsFocus);
   cursor: pointer;
 }
@@ -86,30 +76,18 @@ body {
   text-align: center;
 }
 
-#casual-workers,
-#casual-worker-pay,
-#average-casual-hours,
-#standard-workers,
-#standard-worker-pay,
-#average-standard-hours,
-#expert-workers,
-#expert-worker-pay,
-#average-expert-hours {
+.inputCalculate {
   margin-left: 2%;
   margin-bottom: 5%;
   height: 30px;
   width: 250px;
 }
 
-#casual-workers,
-#casual-worker-pay,
-#average-casual-hours {
+.topLine {
   margin-top: 10%;
 }
 
-#average-casual-hours,
-#average-standard-hours,
-#average-expert-hours {
+.hoursWidth {
   width: 300px;
 }
 

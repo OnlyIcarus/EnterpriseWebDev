@@ -75,17 +75,6 @@ export default function App() {
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
         document.getElementById('main-body').style.display = 'block';
-        // document.getElementById('casual-workers').style.display = 'inline-block';
-        // document.getElementById('casual-worker-pay').style.display = 'inline-block';
-        // document.getElementById('average-casual-hours').style.display = 'inline-block';
-        // document.getElementById('standard-workers').style.display = 'inline-block';
-        // document.getElementById('standard-worker-pay').style.display = 'inline-block';
-        // document.getElementById('average-standard-hours').style.display = 'inline-block';
-        // document.getElementById('expert-workers').style.display = 'inline-block';
-        // document.getElementById('expert-worker-pay').style.display = 'inline-block';
-        // document.getElementById('average-expert-hours').style.display = 'inline-block';
-        // document.getElementById('calculate').style.display = 'block';
-        // document.getElementById('signout-button').style.display = 'block';
       }
     })
   }
@@ -149,7 +138,7 @@ export default function App() {
     <div id="container">
       <div id="login-page">
         <div id="login-button-container">
-          <div id="register-button" onClick={switchPageLogin}>Already a User? Login Here</div>
+          <div id="register-button" className="buttons" onClick={switchPageLogin}>Already a User? Login Here</div>
         </div>
         <div id="register-container">
           <div id="register-input">
@@ -159,7 +148,7 @@ export default function App() {
             <br />
             <input ref={emailRef} type="text" placeholder="E-Mail..." className="inputLogin" />
           </div>
-          <button id="register-button" onClick={handleRegister}>Register</button>
+          <button id="register-button" className="buttons" onClick={handleRegister}>Register</button>
         </div>
         <div id="login-container">
           <div id="login-input">
@@ -167,30 +156,30 @@ export default function App() {
             <br />
             <input ref={loginPassRef} type="password" placeholder="Password..." className="inputLogin" />
           </div>
-          <button id="register-button" onClick={handleLogin}>Log In</button>
+          <button id="register-button" className="buttons" onClick={handleLogin}>Log In</button>
         </div>
       </div>
       <div id="main-body">
         <div id="calculate-form">
           <div id="inputs">
-            <input id="quote-name" ref={quoteName} type="text" placeholder="Name for your quote" />
+            <input id="quote-name" className="inputCalculate" ref={quoteName} type="text" placeholder="Name for your quote" />
             <br />
-            <input id="casual-workers" ref={casualWorkersRef} type="number" placeholder="Number of Casual Workers" />
-            <input id="casual-worker-pay" ref={casualWorkerPayRef} type="number" placeholder="Average pay for casual workers" />
-            <input id="average-casual-hours" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
+            <input id="casual-workers" className="inputCalculate topLine" ref={casualWorkersRef} type="number" placeholder="Number of Casual Workers" />
+            <input id="casual-worker-pay" className="inputCalculate topLine" ref={casualWorkerPayRef} type="number" placeholder="Average pay for casual workers" />
+            <input id="average-casual-hours" className="inputCalculate topLine hoursWidth" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
             <br />
-            <input id="standard-workers" ref={standardWorkersRef} type="number" placeholder="Number of Standard Workers" />
-            <input id="standard-worker-pay" ref={standardWorkerPayRef} type="number" placeholder="Average pay for standard workers" />
-            <input id="average-standard-hours" ref={averageStandardHoursRef} type="number" placeholder="Average hours worked by standard workers" />
+            <input id="standard-workers" className="inputCalculate" ref={standardWorkersRef} type="number" placeholder="Number of Standard Workers" />
+            <input id="standard-worker-pay" className="inputCalculate" ref={standardWorkerPayRef} type="number" placeholder="Average pay for standard workers" />
+            <input id="average-standard-hours" className="inputCalculate hoursWidth" ref={averageStandardHoursRef} type="number" placeholder="Average hours worked by standard workers" />
             <br />
-            <input id="expert-workers" ref={expertWorkersRef} type="number" placeholder="Number of Expert Workers" />
-            <input id="expert-worker-pay" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
-            <input id="average-expert-hours" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
+            <input id="expert-workers" className="inputCalculate" ref={expertWorkersRef} type="number" placeholder="Number of Expert Workers" />
+            <input id="expert-worker-pay" className="inputCalculate" ref={expertWorkerPayRef} type="number" placeholder="Average pay for expert workers" />
+            <input id="average-expert-hours" className="inputCalculate hoursWidth" ref={averageExpertHoursRef} type="number" placeholder="Average hours worked by expert workers" />
           </div>
-          <button id="calculate" onClick={calculateQuote}>Save</button>
+          <button id="calculate" className="buttons" onClick={calculateQuote}>Save</button>
         </div>
         <div id="center">
-          <div id="signout-button" onClick={handleSignout}>Sign Out</div>
+          <div id="signout-button" className="buttons" onClick={handleSignout}>Sign Out</div>
         </div>
       </div>
     </div>
