@@ -152,7 +152,6 @@ export default function App() {
         for (let i = 0; i < data.length; i++) {
           let tBody = document.getElementById('quote-tbody');
           let newRow = tBody.insertRow();
-          newRow.setAttribute("id", data[0]._id)
           let newCell = newRow.insertCell();
           let name = document.createTextNode(data[i].name);
           let newCellTwo = newRow.insertCell();
@@ -177,7 +176,7 @@ export default function App() {
                   type: 'cors',
                   method: "DELETE",
                 }).then(function (response) {
-                  document.getElementById(data[0]._id).deleteRow(0);
+                  tBody.deleteRow(i);
                   alert("Succesfully Deleted Quote")
                 }).then(function (error) {
                   alert("Something went wrong, please try again");
