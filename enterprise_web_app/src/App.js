@@ -153,7 +153,9 @@ export default function App() {
         let newRow = tBody.insertRow();
         let newCell = newRow.insertCell();
         let name = document.createTextNode(data[i].name);
+        let id = document.createTextNode(data[i]._id);
         newCell.appendChild(name);
+        newCell.appendChild(id);
       }
     });
   }
