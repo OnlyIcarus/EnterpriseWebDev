@@ -180,6 +180,15 @@ export default function App() {
           </div>
           <button id="calculate" className="buttons" onClick={saveQuote}>Save</button>
         </div>
+        <table id="quoteTable">
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>Calculate</th>
+          </tr>
+        </table>
         <div id="center">
           <div id="signout-button" className="buttons" onClick={handleSignout}>Sign Out</div>
         </div>
