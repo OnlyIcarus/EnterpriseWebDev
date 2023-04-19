@@ -93,6 +93,7 @@ export default function App() {
           document.getElementById('register-container').style.display = 'block';
           document.getElementById('register-button').style.display = 'block';
           document.getElementById('signout-button').style.display = 'none';
+          document.getElementById('main-body').style.display = 'none';
         })
     } else {
       return;
