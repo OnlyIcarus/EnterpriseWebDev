@@ -147,7 +147,8 @@ export default function App() {
       method: "GET",
     }).then(function (response) {
       var row = document.createElement("TR");
-      row.insertCell(response[0])
+      row.insertCell(response[0].name)
+      $("#quote-tbody").append(row)
     }).catch(function (error) {
       alert("Something went wrong, please try again");
     })
