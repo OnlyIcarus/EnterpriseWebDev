@@ -135,7 +135,7 @@ body {
   border-bottom: 1px solid #dddddd;
 }
 
-#quote-table tbody tr:nth-of-type(even) {
+#quote-table tbody tr {
   background-color: #f3f3f3;
 }
 
