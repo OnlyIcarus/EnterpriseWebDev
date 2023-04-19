@@ -78,7 +78,6 @@ body {
 }
 
 #signout-button {
-  display: none;
   width: 10%;
   margin-left: 75%;
 }
@@ -96,7 +95,6 @@ body {
 #expert-workers,
 #expert-worker-pay,
 #average-expert-hours {
-  display: none;
   margin-left: 2%;
   margin-bottom: 5%;
   height: 30px;
@@ -116,11 +114,14 @@ body {
 }
 
 #calculate {
-  display: none;
   width: 15%;
   margin-left: 26%;
 }
 
 #inputs {
   width: 80%;
+}
+
+#main-body {
+  display: none;
 }

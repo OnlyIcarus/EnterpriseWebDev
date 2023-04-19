@@ -73,17 +73,18 @@ export default function App() {
         document.getElementById('register-container').style.display = 'none';
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
-        document.getElementById('casual-workers').style.display = 'inline-block';
-        document.getElementById('casual-worker-pay').style.display = 'inline-block';
-        document.getElementById('average-casual-hours').style.display = 'inline-block';
-        document.getElementById('standard-workers').style.display = 'inline-block';
-        document.getElementById('standard-worker-pay').style.display = 'inline-block';
-        document.getElementById('average-standard-hours').style.display = 'inline-block';
-        document.getElementById('expert-workers').style.display = 'inline-block';
-        document.getElementById('expert-worker-pay').style.display = 'inline-block';
-        document.getElementById('average-expert-hours').style.display = 'inline-block';
-        document.getElementById('calculate').style.display = 'block';
-        document.getElementById('signout-button').style.display = 'block';
+        document.getElementById('main-body').style.display = 'block';
+        // document.getElementById('casual-workers').style.display = 'inline-block';
+        // document.getElementById('casual-worker-pay').style.display = 'inline-block';
+        // document.getElementById('average-casual-hours').style.display = 'inline-block';
+        // document.getElementById('standard-workers').style.display = 'inline-block';
+        // document.getElementById('standard-worker-pay').style.display = 'inline-block';
+        // document.getElementById('average-standard-hours').style.display = 'inline-block';
+        // document.getElementById('expert-workers').style.display = 'inline-block';
+        // document.getElementById('expert-worker-pay').style.display = 'inline-block';
+        // document.getElementById('average-expert-hours').style.display = 'inline-block';
+        // document.getElementById('calculate').style.display = 'block';
+        // document.getElementById('signout-button').style.display = 'block';
       }
     })
   }
@@ -171,6 +172,8 @@ export default function App() {
       <div id="main-body">
         <div id="calculate-form">
           <div id="inputs">
+            <input id="quote-name" ref={quoteName} type="text" placeholder="Name for your quote" />
+            <br />
             <input id="casual-workers" ref={casualWorkersRef} type="number" placeholder="Number of Casual Workers" />
             <input id="casual-worker-pay" ref={casualWorkerPayRef} type="number" placeholder="Average pay for casual workers" />
             <input id="average-casual-hours" ref={averageCasualHoursRef} type="number" placeholder="Average hours worked by casual workers" />
