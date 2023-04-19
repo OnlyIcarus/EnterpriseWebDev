@@ -159,9 +159,9 @@ export default function App() {
         let update = document.createElement('input');
         update.type = "button";
         update.value = "Update";
-        update.onclick = (function (entry) {
+        update.onclick = (function () {
           console.log(1);
-        })(entry);
+        });
         newCell.appendChild(name);
         newCellTwo.appendChild(id);
         newCellThree.appendChild(update);
