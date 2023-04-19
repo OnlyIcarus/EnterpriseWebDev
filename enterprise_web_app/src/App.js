@@ -148,11 +148,11 @@ export default function App() {
     }).then(function(response) {
       return response.json();
     }).then(function(data) {
-      for(i = 0; i < data.length - 1; i++) {
-        var tBody = document.getElementById('quote-tbody');
-        var newRow = tBody.insertRow();
-        var newCell = newRow.insertCell();
-        var newText = document.createTextNode(data[i].name);
+      for(let i = 0; i < data.length - 1; i++) {
+        let tBody = document.getElementById('quote-tbody');
+        let newRow = tBody.insertRow();
+        let newCell = newRow.insertCell();
+        let newText = document.createTextNode(data[i].name);
         newCell.appendChild(newText);
       }
     });
