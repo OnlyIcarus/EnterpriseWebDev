@@ -170,6 +170,7 @@ export default function App() {
           remove.value = "Delete";
           remove.onclick = (function () {
             if (window.alert("Are you sure you want to delete this quote?") === true) {
+              console.log("accepted");
               fetch("api/quote/" + data[i]._id,
                 {
                   headers: { 'Content-Type': 'application/json' },
