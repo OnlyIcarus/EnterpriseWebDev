@@ -165,6 +165,15 @@ export default function App() {
           update.onclick = (function () {
             updating = true;
             $("#quote-name").val(data[i].name);
+            $("#casual-workers").val(data[i].casual_workers);
+            $("#casual-worker-pay").val(data[i].casual_worker_pay);
+            $("#average-casual-hours").val(data[i].average_casual_hours);
+            $("#standard-workers").val(data[i].standard_workers);
+            $("#standard-worker-pay").val(data[i].standard_worker_pay);
+            $("#average-standard-hours").val(data[i].average_standard_hours);
+            $("#expert-workers").val(data[i].expert_workers);
+            $("#expert-worker-pay").val(data[i].expert_worker_pay);
+            $("#average-expert-hours").val(data[i].average_expert_hours);
           });
           let newCellFour = newRow.insertCell();
           let remove = document.createElement('input');
