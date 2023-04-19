@@ -164,7 +164,7 @@ export default function App() {
           update.value = "Update";
           update.onclick = (function () {
             updating = true;
-            document.getElementById('quote-name').innerHTML(data[i].name)
+            document.getElementById('quote-name').value(data[i].name)
           });
           let newCellFour = newRow.insertCell();
           let remove = document.createElement('input');
