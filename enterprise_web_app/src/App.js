@@ -146,7 +146,7 @@ export default function App() {
       type: 'cors',
       method: "GET",
     }).then(function (response) {
-      console.log(response[0].name)
+      console.log(response[0])
     }).catch(function (error) {
       alert("Something went wrong, please try again");
     })
