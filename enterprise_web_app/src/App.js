@@ -180,7 +180,7 @@ export default function App() {
           </div>
           <button id="calculate" className="buttons" onClick={saveQuote}>Save</button>
         </div>
-        <table id="quoteTable">
+        <table id="quote-table">
           <tr>
             <th>Name</th>
             <th>ID</th>

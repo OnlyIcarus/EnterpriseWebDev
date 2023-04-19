@@ -108,3 +108,44 @@ body {
   margin-left: 5%;
   margin-top: 10%;
 }
+
+/* Start of code taken directly from https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l */
+
+#quote-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#quote-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+#quote-table th,
+#quote-table td {
+    padding: 12px 15px;
+}
+
+#quote-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+#quote-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+#quote-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+#quote-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+/* End of code taken directly from https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l /*
