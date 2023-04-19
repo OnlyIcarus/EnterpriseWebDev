@@ -148,7 +148,7 @@ export default function App() {
     }).then(function(response) {
       return response.json();
     }).then(function(data) {
-      for(i = 0; i < data.length; i++) {
+      for(i = 0; i < data.length - 1; i++) {
         var tBody = document.getElementById('quote-tbody');
         var newRow = tBody.insertRow();
         var newCell = newRow.insertCell();
