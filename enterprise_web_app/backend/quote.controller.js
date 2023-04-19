@@ -65,7 +65,6 @@ const remove = async (req, res) => {
   try {
     let quote = req.profile
     let deletedQuote = await quote.remove()
-    res.json(deletedQuote)
   } catch (err) {
     return res.status(400).json({
       error: errorHandler.getErrorMessage(err)
