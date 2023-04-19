@@ -175,7 +175,7 @@ export default function App() {
           calculate.value = "Calculate";
           calculate.onclick = (function () {
             console.log(data[i]._id);
-            fetch("api/quote/" + data[i]._id,
+            fetch("api/calculate/" + data[i]._id,
               {
                 headers: { 'Content-Type': 'application/json' },
                 type: 'cors',
