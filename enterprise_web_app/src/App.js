@@ -236,7 +236,7 @@ export default function App() {
               }).then(function (response) {
                 return response.json();
               }).then(function (data) {
-                alert("Budget for this quote: £" + data)
+                alert("Budget for this quote: £" + data.toFixed(2))
               })
             })
             newCell.appendChild(name);
