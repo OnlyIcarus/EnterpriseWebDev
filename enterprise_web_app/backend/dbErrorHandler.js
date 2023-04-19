@@ -1,5 +1,7 @@
 'use strict'
 
+//Taken from Topic 5 of Enterprise Web Systems
+
 /**
  * Get unique error field name
  */

@@ -1,3 +1,5 @@
+//Taken and adapted from Topic 5 of Enterprise Web Systems
+
 import User from './user.model.js'
 import lodash from 'lodash'
 import errorHandler from './dbErrorHandler.js'

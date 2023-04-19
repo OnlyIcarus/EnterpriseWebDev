@@ -4,6 +4,7 @@ import './App.css'
 import $ from 'jquery'
 
 export default function App() {
+  //List of constant variables for text fields within document
   const usernameRef = useRef()
   const passwordRef = useRef()
   const emailRef = useRef()
@@ -24,6 +25,7 @@ export default function App() {
   let updateId;
   let holdEmail;
 
+  //Function to send api call registering the user
   function handleRegister() {
     let username = usernameRef.current.value
     let password = passwordRef.current.value
@@ -43,6 +45,7 @@ export default function App() {
 
   }
 
+  //Function to hide registration page and show login page
   function switchPageLogin() {
     if (document.getElementById('register-container')) {
 
@@ -59,6 +62,7 @@ export default function App() {
     }
   }
 
+  //Function to send API call to login to page, if succesful will hide login containers and show the main site
   function handleLogin() {
     const email = loginEmailRef.current.value;
     const password = loginPassRef.current.value;
@@ -83,6 +87,7 @@ export default function App() {
       })
   }
 
+  //Function to send API call to logout of page, if alert is responded with OK then will hide page and show registration page
   function handleSignout() {
     if (window.confirm('Are you sure you want to sign out?') === true) {
       console.log('Signed Out')
@@ -92,6 +97,7 @@ export default function App() {
           method: "GET"
         }).then(function (response) {
           alert('Succesfully signed out')
+          document.getElementById('register-button').textContent = 'Already a User? Login Here';
           document.getElementById('register-container').style.display = 'block';
           document.getElementById('register-button').style.display = 'block';
           document.getElementById('signout-button').style.display = 'none';
@@ -103,7 +109,9 @@ export default function App() {
     return;
   }
 
+  //Function to save quote to database
   function saveQuote() {
+    //List of variables for text fields
     const name = quoteName.current.value;
     const casualWorkers = casualWorkersRef.current.value;
     const casualWorkerPay = casualWorkerPayRef.current.value;
@@ -116,6 +124,7 @@ export default function App() {
     const averageExpertHours = averageExpertHoursRef.current.value;
     const email = holdEmail;
 
+    //Check to see if this is an update or a new quote, if new quote send new quote
     if (updating === false) {
       fetch("api/quote",
         {
@@ -141,7 +150,7 @@ export default function App() {
           alert("Something went wrong, please try again");
         })
       quoteTable(email);
-    } else {
+    } else { //If this is an update, send update
       fetch("api/quote/" + updateId,
         {
           headers: { 'Content-Type': 'application/json' },
@@ -169,6 +178,7 @@ export default function App() {
     }
   }
 
+  //Function to check all quotes registered by this email, and then append each to the table adding relevant buttons
   function quoteTable(email) {
     $("#quote-tbody tr").remove();
     fetch("api/list/" + email,
@@ -190,7 +200,7 @@ export default function App() {
           let update = document.createElement('input');
           update.type = "button";
           update.value = "Update";
-          update.onclick = (function () {
+          update.onclick = (function () { //Update function, sets text fields to appropriate values and changes saves button to update button
             updating = true;
             updateId = data[i]._id;
             $("#quote-name").val(data[i].name);
@@ -208,7 +218,7 @@ export default function App() {
           let remove = document.createElement('input');
           remove.type = "button";
           remove.value = "Delete";
-          remove.onclick = (function () {
+          remove.onclick = (function () { //Delete function, should send api call to delete from database, and delete the table entry, however does not work, probably backend
             if (window.confirm("Are you sure you want to delete this quote?") === true) {
               console.log("accepted");
               fetch("api/quote/" + data[i]._id,
@@ -227,7 +237,7 @@ export default function App() {
           let calculate = document.createElement('input');
           calculate.type = "button";
           calculate.value = "Calculate";
-          calculate.onclick = (function () {
+          calculate.onclick = (function () { //Function to send API call to the calculate by quote ID function
             fetch("api/calculate/" + data[i]._id,
               {
                 headers: { 'Content-Type': 'application/json' },

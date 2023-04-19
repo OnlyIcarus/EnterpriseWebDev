@@ -1,8 +1,11 @@
+//Taken from Topic 5 of Enterprise Web Systems
+
 import User from './user.model.js'
 import jwt from 'jsonwebtoken'
 import expressJwt from 'express-jwt'
 import config from './config.js'
 
+//Function to check user details, if verified allows login
 const signin = async (req, res) => {
   try {
     let user = await User.findOne({
@@ -44,6 +47,7 @@ const signin = async (req, res) => {
 
 }
 
+//Function to signout user
 const signout = (req, res) => {
   res.clearCookie("t")
   return res.status(200).json({

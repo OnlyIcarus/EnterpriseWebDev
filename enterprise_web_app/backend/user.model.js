@@ -1,3 +1,5 @@
+//Taken and adapted from Topic 5 of Enterprise Web Systems
+
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 

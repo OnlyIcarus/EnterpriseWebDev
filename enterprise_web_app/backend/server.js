@@ -1,3 +1,5 @@
+//Taken and adapted from Topic 5 of Enterprise Web Systems
+
 import path from 'path';
 import express from 'express';
 import userRoutes from './user.routes.js'

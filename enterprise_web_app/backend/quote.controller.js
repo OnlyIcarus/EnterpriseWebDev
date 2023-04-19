@@ -1,7 +1,10 @@
+//Taken and adapted from Topic 5 of Enterprise Web Systems
+
 import Quote from './quote.model.js'
 import lodash from 'lodash'
 import errorHandler from './dbErrorHandler.js'
 
+//Function to create new quote
 const create = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8000/api/users");
   const quote = new Quote(req.body)
@@ -18,6 +21,7 @@ const create = async (req, res) => {
   }
 }
 
+//Function to list all quotes
 const list = async (req, res) => {
   try {
     let quotes = await Quote.find().select('name email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
@@ -30,6 +34,7 @@ const list = async (req, res) => {
   }
 }
 
+//Function to get quote ID used for parameters
 const quoteById = async (req, res, next, id) => {
   try {
     console.log("Getting quote: " + id)
@@ -47,6 +52,7 @@ const quoteById = async (req, res, next, id) => {
   }
 }
 
+//Function to update existing quote
 const update = async (req, res) => {
   try {
     let quote = req.profile
@@ -61,6 +67,7 @@ const update = async (req, res) => {
   }
 }
 
+//Function to remove quote (DOES NOT WORK)
 const remove = async (req, res) => {
   try {
     let quote = req.profile
@@ -73,10 +80,12 @@ const remove = async (req, res) => {
   }
 }
 
+//Function to read quote (list singular quote)
 const read = (req, res) => {
   return res.json(req.profile)
 }
 
+//Function to list all quotes from one email
 const listByEmail = async (req, res, next, email) => {
   try {
     let quotes = await Quote.find({email: email}).select('name email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
@@ -90,6 +99,7 @@ const listByEmail = async (req, res, next, email) => {
   }
 }
 
+//Function to calculate quote including fudge factor
 const calculate = (req, res) => {
   try {
     const random = Math.random() + 0.5

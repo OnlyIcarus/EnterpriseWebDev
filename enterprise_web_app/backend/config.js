@@ -1,3 +1,5 @@
+//Taken from Topic 5 of Enterprise Web Systems
+
 const config = {
   env: process.env.NODE_ENV || 'development',
   port: process.env.PORT || 8000,
