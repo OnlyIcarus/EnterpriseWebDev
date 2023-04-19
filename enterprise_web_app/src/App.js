@@ -136,6 +136,7 @@ export default function App() {
       }).catch(function (error) {
         alert("Something went wrong, please try again");
       })
+      quoteTable(email);
   }
 
   function quoteTable(email) {
@@ -182,7 +183,7 @@ export default function App() {
               }).then(function (response) {
                 return response.json();
               }).then(function (data) {
-                alert("£" + data)
+                alert("Budget for this quote: £" + data)
               })
             })
             newCell.appendChild(name);
