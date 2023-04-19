@@ -75,6 +75,7 @@ export default function App() {
         document.getElementById('login-container').style.display = 'none';
         document.getElementById('register-button').style.display = 'none';
         document.getElementById('main-body').style.display = 'block';
+        quoteTable(email);
       }
     })
   }
@@ -136,6 +137,12 @@ export default function App() {
     })
   }
 
+  function quoteTable(email) {
+    var new_tbody = document.createElement('tbody');
+    populate_with_new_rows(new_tbody);
+    old_tbody.parentNode.replaceChild(new_tbody, old_tbody)
+  }
+
   return (
     <div id="container">
       <div id="login-page">
@@ -190,7 +197,7 @@ export default function App() {
               <th>Calculate</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="quote-tbody">
           </tbody>
         </table>
         <div id="center">
