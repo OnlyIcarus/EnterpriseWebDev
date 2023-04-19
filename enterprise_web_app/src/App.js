@@ -171,6 +171,7 @@ export default function App() {
           })
         }).then(function (response) {
           alert("Succesfully Updated Quote");
+          updating = false;
         }).catch(function (error) {
           alert("Something went wrong, please try again");
         })
