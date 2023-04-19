@@ -21,6 +21,7 @@ export default function App() {
   const quoteName = useRef()
   const physicalAssetsRef = useRef()
   let updating = false;
+  let updateId;
   let holdEmail;
 
   function handleRegister() {
@@ -141,7 +142,7 @@ export default function App() {
         })
       quoteTable(email);
     } else {
-      fetch("api/quote",
+      fetch("api/quote/" + updateId,
         {
           headers: { 'Content-Type': 'application/json' },
           type: 'cors',
@@ -191,6 +192,7 @@ export default function App() {
           update.value = "Update";
           update.onclick = (function () {
             updating = true;
+            updateId = data[i]._id;
             $("#quote-name").val(data[i].name);
             $("#casual-workers").val(data[i].casual_workers);
             $("#casual-worker-pay").val(data[i].casual_worker_pay);
