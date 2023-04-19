@@ -148,12 +148,13 @@ export default function App() {
     }).then(function(response) {
       return response.json();
     }).then(function(data) {
-      console.log(data[2].name);
-      var tBody = document.getElementById('quote-tbody');
-      var newRow = tBody.insertRow();
-      var newCell = newRow.insertCell();
-      var newText = document.createTextNode(data[2].name);
-      newCell.appendChild(newText);
+      for(i = 0; i < data.length; i++) {
+        var tBody = document.getElementById('quote-tbody');
+        var newRow = tBody.insertRow();
+        var newCell = newRow.insertCell();
+        var newText = document.createTextNode(data[i].name);
+        newCell.appendChild(newText);
+      }
     });
   }
 
