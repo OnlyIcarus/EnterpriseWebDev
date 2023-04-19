@@ -160,7 +160,7 @@ export default function App() {
         update.type = "button";
         update.value = "Update";
         update.onclick = (function () {
-          console.log(1);
+          console.log(data[i]._id);
         });
         newCell.appendChild(name);
         newCellTwo.appendChild(id);
