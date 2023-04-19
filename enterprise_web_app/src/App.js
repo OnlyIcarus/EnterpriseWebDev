@@ -17,6 +17,7 @@ export default function App() {
   const expertWorkersRef = useRef()
   const expertWorkerPayRef = useRef()
   const averageExpertHoursRef = useRef()
+  const quoteName = useRef()
   const physicalAssetsRef = useRef()
   let holdEmail;
 
