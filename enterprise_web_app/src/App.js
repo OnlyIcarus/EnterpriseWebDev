@@ -148,10 +148,12 @@ export default function App() {
     }).then(function(response) {
       return response.json();
     }).then(function(data) {
+      console.log(data[2].name);
       var tBody = document.getElementById('quote-tbody');
       var newRow = tBody.insertRow();
       var newCell = newRow.insertCell();
-      newCell.appendChild(data[2].name);
+      var newText = document.createTextNode(data[2].name);
+      newCell.appendChild(newText);
     });
   }
 
