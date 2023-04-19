@@ -103,3 +103,8 @@ body {
 #main-body {
   display: none;
 }
+
+#quote-name {
+  margin-left: 26%;
+  margin-top: 5%;
+}
