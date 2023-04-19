@@ -2,6 +2,11 @@ import mongoose from 'mongoose'
 import crypto from 'crypto'
 
 const QuoteSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    trim: true,
+    required: 'Name is required'
+  },
   email: {
     index: true,
     type: String,

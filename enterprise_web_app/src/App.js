@@ -99,6 +99,7 @@ export default function App() {
   }
 
   function calculateQuote() {
+    const name = quoteName.current.value;
     const casualWorkers = casualWorkersRef.current.value;
     const casualWorkerPay = casualWorkerPayRef.current.value;
     const averageCasualHours = averageCasualHoursRef.current.value;
@@ -108,7 +109,7 @@ export default function App() {
     const expertWorkers = expertWorkersRef.current.value;
     const expertWorkerPay = expertWorkerPayRef.current.value;
     const averageExpertHours = averageExpertHoursRef.current.value;
-    const email = holdEmail
+    const email = holdEmail;
 
     fetch("api/quote",
     {
@@ -116,6 +117,7 @@ export default function App() {
       type: 'cors',
       method: "POST",
       body: JSON.stringify( { 
+        name: name,
         email: email,
         casual_workers: casualWorkers, 
         casual_worker_pay: casualWorkerPay, 

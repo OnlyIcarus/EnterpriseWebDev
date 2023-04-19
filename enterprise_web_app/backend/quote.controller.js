@@ -20,7 +20,7 @@ const create = async (req, res) => {
 
 const list = async (req, res) => {
   try {
-    let quotes = await Quote.find().select('email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
+    let quotes = await Quote.find().select('name email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
     console.log("Got quotes" + quotes)
     res.json(quotes)
   } catch (err) {
@@ -79,7 +79,7 @@ const read = (req, res) => {
 
 const listByEmail = async (req, res, next, email) => {
   try {
-    let quotes = await Quote.find({email: email}).select('email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
+    let quotes = await Quote.find({email: email}).select('name email casual_workers casual_worker_pay average_casual_hours standard_workers standard_worker_pay average_standard_hours expert_workers expert_worker_pay average_expert_hours created')
     console.log("Got quotes" + quotes)
     req.profile = quotes
     next()
