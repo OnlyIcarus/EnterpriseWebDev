@@ -146,7 +146,8 @@ export default function App() {
       type: 'cors',
       method: "GET",
     }).then(function (response) {
-      alert("Succesfully Retrieved Data");
+      var row = document.createElement("TR");
+      row.insertCell(response[0])
     }).catch(function (error) {
       alert("Something went wrong, please try again");
     })
