@@ -16,7 +16,8 @@
     "jquery": "3.6.4"
   },
   "scripts": {
-    "start": "(cd backend && npm run start) & react-scripts start",
+    "start": "react-scripts start",
+    "dev": "concurrently \"cd backend && npm run start\" \"npm run start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
