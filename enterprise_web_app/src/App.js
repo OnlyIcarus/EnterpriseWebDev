@@ -145,12 +145,11 @@ export default function App() {
       headers: {'Content-Type': 'application/json'},
       type: 'cors',
       method: "GET",
-    }).then(function (data) {
-      console.log(data.body)
-    }).catch(function (error) {
-      alert("Something went wrong, please try again");
+    }).then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      console.log(data);
     })
-  }
 
   return (
     <div id="container">
